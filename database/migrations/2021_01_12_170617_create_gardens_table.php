@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateGardensTable extends Migration
 {
-    //TODO finish migration
+
     /**
      * Run the migrations.
      *
@@ -15,8 +15,17 @@ class CreateGardensTable extends Migration
     public function up()
     {
         Schema::create('gardens', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
+            $table->uuid('user_id'); // References users
             $table->timestamps();
+        });
+
+        Schema::table('gardens', function($table) {
+            $table->foreign('user_id')
+                ->references('user_id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

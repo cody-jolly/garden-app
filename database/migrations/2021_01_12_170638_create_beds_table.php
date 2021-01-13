@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateBedsTable extends Migration
 {
-    //TODO finish migration
     /**
      * Run the migrations.
      *
@@ -15,8 +14,19 @@ class CreateBedsTable extends Migration
     public function up()
     {
         Schema::create('beds', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
+            $table->integer('width');
+            $table->integer('length');
+            $table->string('garden_id'); // References gardens
             $table->timestamps();
+        });
+
+        Schema::table('beds', function($table) {
+            $table->foreign('garden_id')
+                ->references('id')
+                ->on('gardens')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
