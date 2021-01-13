@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import GardenAppLogo from '@/Jetstream/GardenAppLogo'
+    import GardenAppLogo from '@/CustomComponents/GardenAppLogo'
 
 
     export default {

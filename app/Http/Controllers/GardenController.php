@@ -35,7 +35,15 @@ class GardenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'garden_name' => 'required|max:255'
+        ]);
+
+        $request->user()->gardens()->create([
+            'name' => $request->garden_name
+        ]);
+
+        return back();
     }
 
     /**

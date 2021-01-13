@@ -16,13 +16,13 @@ class CreateGardensTable extends Migration
     {
         Schema::create('gardens', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->uuid('user_id'); // References users
+            $table->bigInteger('user_id')->unsigned(); // References users
             $table->timestamps();
         });
 
         Schema::table('gardens', function($table) {
             $table->foreign('user_id')
-                ->references('user_id')
+                ->references('id')
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
