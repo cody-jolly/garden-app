@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BedController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GardenController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +27,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::resource('gardens', GardenController::class);
+    Route::resource('gardens', GardenController::class)->except('create', 'edit');
     Route::resource('beds', BedController::class);
 });

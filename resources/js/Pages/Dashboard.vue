@@ -17,7 +17,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <garden-overview />
+                    <gardens />
                 </div>
             </div>
         </div>
@@ -27,13 +27,13 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import Welcome from '@/Jetstream/Welcome'
-    import GardenOverview from "@/CustomComponents/GardenOverview";
+    import Gardens from "@/CustomComponents/Gardens";
 
     export default {
-        props: ['user'],
+        props: ['user', 'gardens'],
 
         components: {
-            GardenOverview,
+            Gardens,
             AppLayout,
             Welcome,
         },

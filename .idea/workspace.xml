@@ -20,20 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dc3126b-15bb-4f9e-82b4-8cf465b8a317" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/CustomComponents/AddGardenForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/CustomComponents/Gardens.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GardenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GardenController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Bed.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Garden.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Garden.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Traits/UsesUuid.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_12_170617_create_gardens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_12_170617_create_gardens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_12_170638_create_beds_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_12_170638_create_beds_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/ApplicationLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Jetstream/ApplicationLogo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/ApplicationMark.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Jetstream/ApplicationMark.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/AuthenticationCardLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Jetstream/AuthenticationCardLogo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/GardenAppIcon.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/GardenAppLogo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/CustomComponents/GardenOverview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/CustomComponents/GardenOverview.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -172,27 +169,31 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1mdvTwdF3HGPmJrUcKnq6eyPzXd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models/Traits" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/CustomComponents" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/js/CustomComponents" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/CustomComponents" />
       <recent name="$PROJECT_DIR$/app/Models/Traits" />
       <recent name="$PROJECT_DIR$/storage/app/public" />
       <recent name="$PROJECT_DIR$/app/Models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/CustomComponents" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,7 +219,8 @@
       <workItem from="1610353117809" duration="11237000" />
       <workItem from="1610466857080" duration="4796000" />
       <workItem from="1610525693562" duration="8502000" />
-      <workItem from="1610553907157" duration="3176000" />
+      <workItem from="1610553907157" duration="3441000" />
+      <workItem from="1610616522023" duration="17726000" />
     </task>
     <servers />
   </component>
@@ -235,6 +237,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="935" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610532897708">
@@ -245,14 +251,14 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state x="578" y="256" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.959@0.23.1680.959" timestamp="1610556839743" />
-    <state x="976" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610529925088">
+    <state x="976" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610622526802">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state x="976" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.959@0.23.1680.959" timestamp="1610529925088" />
-    <state x="683" y="141" key="SettingsEditor" timestamp="1610526402036">
+    <state x="976" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.959@0.23.1680.959" timestamp="1610622526802" />
+    <state x="683" y="141" key="SettingsEditor" timestamp="1610616885742">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state x="683" y="141" key="SettingsEditor/0.23.1680.959@0.23.1680.959" timestamp="1610526402036" />
+    <state x="683" y="141" key="SettingsEditor/0.23.1680.959@0.23.1680.959" timestamp="1610616885742" />
     <state x="886" y="234" width="670" height="676" key="search.everywhere.popup" timestamp="1610469921521">
       <screen x="0" y="23" width="1680" height="959" />
     </state>

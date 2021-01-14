@@ -1858,60 +1858,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/AddGardenForm.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/AddGardenForm.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  computed: {
-    iconPath: function iconPath() {
-      return this.$page.props.appPath + "/storage/img/garden-app-icon.svg";
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppLogo.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppLogo.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  computed: {
-    logoPath: function logoPath() {
-      return this.$page.props.appPath + "/storage/img/garden-app-logo.svg";
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenOverview.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenOverview.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1925,17 +1875,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2003,6 +1942,202 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  computed: {
+    iconPath: function iconPath() {
+      return this.$page.props.appPath + "/storage/img/garden-app-icon.svg";
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppLogo.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppLogo.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  computed: {
+    logoPath: function logoPath() {
+      return this.$page.props.appPath + "/storage/img/garden-app-logo.svg";
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenOverview.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenOverview.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/SecondaryButton */ "./resources/js/Jetstream/SecondaryButton.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_0__.default,
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__.default,
+    JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_2__.default,
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_3__.default,
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_4__.default,
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_5__.default,
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_6__.default
+  },
+  computed: {
+    gardens: function gardens() {
+      return this.$page.props.gardens;
+    }
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        garden_name: ''
+      })
+    };
+  },
+  methods: {
+    updateGarden: function updateGarden(gardenId) {
+      var _this = this;
+
+      this.form.put(route('gardens.update', gardenId), {
+        errorBag: 'addGarden',
+        preserveScroll: true,
+        onSuccess: function onSuccess() {
+          return _this.form.reset();
+        },
+        onError: function onError() {
+          if (_this.form.errors.garden_name) {
+            _this.form.reset('garden_name');
+
+            _this.$refs.garden_name.focus();
+          }
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Gardens.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Gardens.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _CustomComponents_AddGardenForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/CustomComponents/AddGardenForm */ "./resources/js/CustomComponents/AddGardenForm.vue");
+/* harmony import */ var _CustomComponents_GardenOverview__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/CustomComponents/GardenOverview */ "./resources/js/CustomComponents/GardenOverview.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    AddGardenForm: _CustomComponents_AddGardenForm__WEBPACK_IMPORTED_MODULE_0__.default,
+    GardenOverview: _CustomComponents_GardenOverview__WEBPACK_IMPORTED_MODULE_1__.default
   }
 });
 
@@ -4383,7 +4518,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Welcome */ "./resources/js/Jetstream/Welcome.vue");
-/* harmony import */ var _CustomComponents_GardenOverview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/CustomComponents/GardenOverview */ "./resources/js/CustomComponents/GardenOverview.vue");
+/* harmony import */ var _CustomComponents_Gardens__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/CustomComponents/Gardens */ "./resources/js/CustomComponents/Gardens.vue");
 //
 //
 //
@@ -4414,9 +4549,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['user'],
+  props: ['user', 'gardens'],
   components: {
-    GardenOverview: _CustomComponents_GardenOverview__WEBPACK_IMPORTED_MODULE_2__.default,
+    Gardens: _CustomComponents_Gardens__WEBPACK_IMPORTED_MODULE_2__.default,
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
     Welcome: _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__.default
   }
@@ -24456,6 +24591,45 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/AddGardenForm.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/CustomComponents/AddGardenForm.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _AddGardenForm_vue_vue_type_template_id_3bec7670___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddGardenForm.vue?vue&type=template&id=3bec7670& */ "./resources/js/CustomComponents/AddGardenForm.vue?vue&type=template&id=3bec7670&");
+/* harmony import */ var _AddGardenForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddGardenForm.vue?vue&type=script&lang=js& */ "./resources/js/CustomComponents/AddGardenForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _AddGardenForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _AddGardenForm_vue_vue_type_template_id_3bec7670___WEBPACK_IMPORTED_MODULE_0__.render,
+  _AddGardenForm_vue_vue_type_template_id_3bec7670___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/CustomComponents/AddGardenForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/GardenAppIcon.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/CustomComponents/GardenAppIcon.vue ***!
@@ -24569,6 +24743,45 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/CustomComponents/GardenOverview.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/CustomComponents/Gardens.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/CustomComponents/Gardens.vue ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _Gardens_vue_vue_type_template_id_28919098___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Gardens.vue?vue&type=template&id=28919098& */ "./resources/js/CustomComponents/Gardens.vue?vue&type=template&id=28919098&");
+/* harmony import */ var _Gardens_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Gardens.vue?vue&type=script&lang=js& */ "./resources/js/CustomComponents/Gardens.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Gardens_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Gardens_vue_vue_type_template_id_28919098___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Gardens_vue_vue_type_template_id_28919098___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/CustomComponents/Gardens.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -26400,6 +26613,22 @@ component.options.__file = "resources/js/Pages/Welcome.vue"
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/AddGardenForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/CustomComponents/AddGardenForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddGardenForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AddGardenForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/AddGardenForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddGardenForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************!*\
   !*** ./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=script&lang=js& ***!
@@ -26445,6 +26674,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GardenOverview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GardenOverview.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenOverview.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GardenOverview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/CustomComponents/Gardens.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Gardens.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Gardens_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Gardens.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Gardens.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Gardens_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -27152,6 +27397,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/AddGardenForm.vue?vue&type=template&id=3bec7670&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/CustomComponents/AddGardenForm.vue?vue&type=template&id=3bec7670& ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddGardenForm_vue_vue_type_template_id_3bec7670___WEBPACK_IMPORTED_MODULE_0__.render,
+/* harmony export */   "staticRenderFns": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddGardenForm_vue_vue_type_template_id_3bec7670___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddGardenForm_vue_vue_type_template_id_3bec7670___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AddGardenForm.vue?vue&type=template&id=3bec7670& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/AddGardenForm.vue?vue&type=template&id=3bec7670&");
+
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=template&id=ca6859ca&":
 /*!****************************************************************************************!*\
   !*** ./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=template&id=ca6859ca& ***!
@@ -27199,6 +27461,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GardenOverview_vue_vue_type_template_id_54690968___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GardenOverview_vue_vue_type_template_id_54690968___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GardenOverview.vue?vue&type=template&id=54690968& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenOverview.vue?vue&type=template&id=54690968&");
+
+
+/***/ }),
+
+/***/ "./resources/js/CustomComponents/Gardens.vue?vue&type=template&id=28919098&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Gardens.vue?vue&type=template&id=28919098& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Gardens_vue_vue_type_template_id_28919098___WEBPACK_IMPORTED_MODULE_0__.render,
+/* harmony export */   "staticRenderFns": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Gardens_vue_vue_type_template_id_28919098___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Gardens_vue_vue_type_template_id_28919098___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Gardens.vue?vue&type=template&id=28919098& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Gardens.vue?vue&type=template&id=28919098&");
 
 
 /***/ }),
@@ -28002,6 +28281,108 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/AddGardenForm.vue?vue&type=template&id=3bec7670&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/AddGardenForm.vue?vue&type=template&id=3bec7670& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* binding */ render,
+/* harmony export */   "staticRenderFns": () => /* binding */ staticRenderFns
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("jet-form-section", {
+    on: { submitted: _vm.addGarden },
+    scopedSlots: _vm._u([
+      {
+        key: "title",
+        fn: function() {
+          return [_vm._v("\n        Garten hinzufügen\n    ")]
+        },
+        proxy: true
+      },
+      {
+        key: "form",
+        fn: function() {
+          return [
+            _c(
+              "div",
+              { staticClass: "col-span-6 sm:col-span-4" },
+              [
+                _c("jet-label", {
+                  attrs: { for: "garden_name", value: "Garten Name" }
+                }),
+                _vm._v(" "),
+                _c("jet-input", {
+                  ref: "garden_name",
+                  staticClass: "mt-1 block w-full",
+                  attrs: {
+                    id: "garden_name",
+                    type: "text",
+                    autocomplete: "Garten Name",
+                    required: ""
+                  },
+                  model: {
+                    value: _vm.form.garden_name,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "garden_name", $$v)
+                    },
+                    expression: "form.garden_name"
+                  }
+                }),
+                _vm._v(" "),
+                _c("jet-input-error", {
+                  staticClass: "mt-2",
+                  attrs: { message: _vm.form.errors.garden_name }
+                })
+              ],
+              1
+            )
+          ]
+        },
+        proxy: true
+      },
+      {
+        key: "actions",
+        fn: function() {
+          return [
+            _c(
+              "jet-action-message",
+              {
+                staticClass: "mr-3",
+                attrs: { on: _vm.form.recentlySuccessful }
+              },
+              [_vm._v("\n            Hinzugefügt.\n        ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "jet-button",
+              {
+                class: { "opacity-25": _vm.form.processing },
+                attrs: { disabled: _vm.form.processing }
+              },
+              [_vm._v("\n            Hinzufügen\n        ")]
+            )
+          ]
+        },
+        proxy: true
+      }
+    ])
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=template&id=ca6859ca&":
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/GardenAppIcon.vue?vue&type=template&id=ca6859ca& ***!
@@ -28070,115 +28451,184 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c(
+      "ul",
+      _vm._l(_vm.gardens, function(garden) {
+        return _c("li", { key: garden.id }, [
+          _c(
+            "div",
+            { staticClass: "m-4 p-2 border relative" },
+            [
+              _c("jet-form-section", {
+                on: {
+                  submitted: function($event) {
+                    return _vm.updateGarden(garden.id)
+                  }
+                },
+                scopedSlots: _vm._u(
+                  [
+                    {
+                      key: "title",
+                      fn: function() {
+                        return [_vm._v(_vm._s(garden.name))]
+                      },
+                      proxy: true
+                    },
+                    {
+                      key: "form",
+                      fn: function() {
+                        return [
+                          _c(
+                            "div",
+                            { staticClass: "col-span-7 sm:col-span-4" },
+                            [
+                              _c("jet-label", {
+                                attrs: {
+                                  for: "garden_name",
+                                  value: "Name Bearbeiten"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input", {
+                                ref: "garden_name",
+                                refInFor: true,
+                                staticClass: "mt-1 block w-full",
+                                attrs: {
+                                  id: "garden_name",
+                                  type: "text",
+                                  autocomplete: "Garten Name",
+                                  required: ""
+                                },
+                                model: {
+                                  value: _vm.form.garden_name,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "garden_name", $$v)
+                                  },
+                                  expression: "form.garden_name"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("jet-input-error", {
+                                staticClass: "mt-2",
+                                attrs: { message: _vm.form.errors.garden_name }
+                              })
+                            ],
+                            1
+                          )
+                        ]
+                      },
+                      proxy: true
+                    },
+                    {
+                      key: "actions",
+                      fn: function() {
+                        return [
+                          _c(
+                            "jet-action-message",
+                            {
+                              staticClass: "mr-1",
+                              attrs: { on: _vm.form.recentlySuccessful }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Gespeichert.\n                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "jet-button",
+                            {
+                              class: { "opacity-25": _vm.form.processing },
+                              attrs: { disabled: _vm.form.processing }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Speichern\n                        "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "inertia-link",
+                            {
+                              staticClass:
+                                "inline-flex items-center ml-2 px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150",
+                              attrs: {
+                                method: "delete",
+                                as: "button",
+                                href: _vm.route("gardens.destroy", garden.id)
+                              }
+                            },
+                            [_vm._v("Löschen")]
+                          )
+                        ]
+                      },
+                      proxy: true
+                    }
+                  ],
+                  null,
+                  true
+                )
+              })
+            ],
+            1
+          )
+        ])
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Gardens.vue?vue&type=template&id=28919098&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Gardens.vue?vue&type=template&id=28919098& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* binding */ render,
+/* harmony export */   "staticRenderFns": () => /* binding */ staticRenderFns
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "garden-section" } }, [
+    _c(
       "div",
       { staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200" },
       [
         _vm.$page.props.user
-          ? _c("jet-form-section", {
-              on: { submitted: _vm.addGarden },
-              scopedSlots: _vm._u(
-                [
-                  {
-                    key: "title",
-                    fn: function() {
-                      return [
-                        _vm._v(
-                          "\n                    Garten hinzufügen\n                "
-                        )
-                      ]
-                    },
-                    proxy: true
-                  },
-                  {
-                    key: "form",
-                    fn: function() {
-                      return [
-                        _c(
-                          "div",
-                          { staticClass: "col-span-6 sm:col-span-4" },
-                          [
-                            _c("jet-label", {
-                              attrs: {
-                                for: "garden_name",
-                                value: "Garten Name"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("jet-input", {
-                              ref: "garden_name",
-                              staticClass: "mt-1 block w-full",
-                              attrs: {
-                                id: "garden_name",
-                                type: "text",
-                                autocomplete: "Garten Name",
-                                required: ""
-                              },
-                              model: {
-                                value: _vm.form.garden_name,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "garden_name", $$v)
-                                },
-                                expression: "form.garden_name"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("jet-input-error", {
-                              staticClass: "mt-2",
-                              attrs: { message: _vm.form.errors.garden_name }
-                            })
-                          ],
-                          1
-                        )
-                      ]
-                    },
-                    proxy: true
-                  },
-                  {
-                    key: "actions",
-                    fn: function() {
-                      return [
-                        _c(
-                          "jet-action-message",
-                          {
-                            staticClass: "mr-3",
-                            attrs: { on: _vm.form.recentlySuccessful }
-                          },
-                          [
-                            _vm._v(
-                              "\n                        Hinzugefügt.\n                    "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "jet-button",
-                          {
-                            class: { "opacity-25": _vm.form.processing },
-                            attrs: { disabled: _vm.form.processing }
-                          },
-                          [
-                            _vm._v(
-                              "\n                        Hinzufügen\n                    "
-                            )
-                          ]
-                        )
-                      ]
-                    },
-                    proxy: true
-                  }
-                ],
-                null,
-                false,
-                1086841648
-              )
-            })
-          : _c("div", [
-              _vm._v(
-                "\n                Bitte melden Sie sich an, um diesen Bereich zu sehen.\n            "
+          ? _c("div", [
+              _c(
+                "div",
+                { staticClass: "p-4 m-2 border-b border-gray-200" },
+                [_c("add-garden-form")],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "p-4 m-2 border-b border-gray-200" },
+                [_c("garden-overview")],
+                1
               )
             ])
-      ],
-      1
+          : _c("div", [
+              _vm._v(
+                "\n            Bitte melden Sie sich an, um diesen Bereich zu sehen.\n        "
+              )
+            ])
+      ]
     )
   ])
 }
@@ -31978,7 +32428,7 @@ var render = function() {
           _c(
             "div",
             { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
-            [_c("garden-overview")],
+            [_c("gardens")],
             1
           )
         ])

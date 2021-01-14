@@ -2,33 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Garden;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GardenController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the user's gardens.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+       return Auth::user()->gardens()->get();
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Store a newly created garden in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -47,25 +37,18 @@ class GardenController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified garden.
      *
      * @param  \App\Models\Garden  $garden
      * @return \Illuminate\Http\Response
      */
-    public function show(Garden $garden)
+    public function show(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'garden_id' => 'required|max:255'
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Garden  $garden
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Garden $garden)
-    {
-        //
+        return $request->user()->gardens()->firstWhere('id', $request->garden_id);
     }
 
     /**
@@ -75,19 +58,29 @@ class GardenController extends Controller
      * @param  \App\Models\Garden  $garden
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Garden $garden)
+    public function update(Request $request, $gardenId)
     {
-        //
+        $this->validate($request, [
+            'garden_name' => 'required|max:255'
+        ]);
+
+        $request->user()->gardens()->firstWhere('id', $gardenId)->update([
+            'name' => $request->garden_name
+        ]);
+
+        return back();
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified garden from storage.
      *
      * @param  \App\Models\Garden  $garden
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Garden $garden)
+    public function destroy($gardenId)
     {
-        //
+        Auth::user()->gardens()->firstWhere('id', $gardenId)->delete();
+
+        return back(303);
     }
 }

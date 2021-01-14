@@ -15,7 +15,7 @@ class CreateGardensTable extends Migration
     public function up()
     {
         Schema::create('gardens', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->id('id');
             $table->bigInteger('user_id')->unsigned(); // References users
             $table->timestamps();
         });
