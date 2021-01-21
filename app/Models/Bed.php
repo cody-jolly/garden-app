@@ -1,5 +1,5 @@
 <?php
-//TODO finish BedController
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,8 +22,16 @@ class Bed extends Model
     /**
      * Get the garden that owns the bed.
      */
-    public function bed()
+    public function garden()
     {
-        return $this->belongsTo(Bed::class);
+        return $this->belongsTo(Garden::class);
+    }
+
+    /**
+     * The varieties that belong to the bed.
+     */
+    public function varieties()
+    {
+        return $this->belongsToMany(Variety::class);
     }
 }

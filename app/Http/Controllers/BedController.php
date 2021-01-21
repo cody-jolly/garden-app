@@ -3,83 +3,103 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bed;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class BedController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the garden's beds.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        //
+        return Auth::user()->beds()->get();
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created bed in storage.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'length'    => 'required|int',
+            'width'     => 'required|int',
+            'garden_id' => 'required|int',
+        ]);
+
+        $request->user()->gardens()->firstWhere('id', $request->garden_id)->beds()->create([
+            'length' => $request->length,
+            'width'  => $request->width,
+        ]);
+
+        return back();
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified bed.
      *
-     * @param  \App\Models\Bed  $bed
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
-    public function show(Bed $bed)
+    public function show(Request $request)
     {
-        //
+        $this->validate($request, [
+            'bed_id' => 'required|int'
+        ]);
+
+        if (Auth::check()) {
+            return Bed::firstWhere('id', $request->bed_id);
+        }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Update the specified bed in storage.
      *
-     * @param  \App\Models\Bed  $bed
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $bedId
+     * @return RedirectResponse
      */
-    public function edit(Bed $bed)
+    public function update(Request $request, $bedId)
     {
-        //
+        $this->validate($request, [
+            'length' => 'required|int',
+            'width' => 'required|int',
+        ]);
+
+        Validator::make(['bedId' => $bedId], ['bedId' => 'required|int'])->validate();
+
+        if (Auth::check()) {
+            Bed::firstWhere('id', $bedId)->update([
+                'length' => $request->length,
+                'width' => $request->width,
+            ]);
+
+            return back();
+        }
     }
 
     /**
-     * Update the specified resource in storage.
+     * Remove the specified bed from storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bed  $bed
-     * @return \Illuminate\Http\Response
+     * @param  $bedId
+     * @return RedirectResponse
      */
-    public function update(Request $request, Bed $bed)
+    public function destroy($bedId)
     {
-        //
-    }
+        Validator::make(['bedId' => $bedId], ['bedId' => 'required|int'])->validate();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Bed  $bed
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Bed $bed)
-    {
-        //
+        if (Auth::check()) {
+            Bed::firstWhere('id', $bedId)->delete();
+
+            return back(303);
+        }
     }
 }

@@ -1,5 +1,5 @@
 <?php
-//TODO finish GardenController
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -33,5 +33,13 @@ class Garden extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the varieties for the garden.
+     */
+    public function varieties()
+    {
+        return $this->hasManyThrough(Variety::class,Bed::class);
     }
 }

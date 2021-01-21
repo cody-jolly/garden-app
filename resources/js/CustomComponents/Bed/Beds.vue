@@ -1,13 +1,12 @@
-<!--TODO finish GardenOverview-->
 <template>
     <div id="garden-section">
         <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
             <div v-if="$page.props.user">
                 <div class="p-4 m-2 border-b border-gray-200">
-                    <add-garden-form />
+                    <add-bed-form />
                 </div>
                 <div class="p-4 m-2 border-b border-gray-200">
-                    <garden-overview />
+                    <bed-overview />
                 </div>
             </div>
             <div v-else>
@@ -18,13 +17,13 @@
 </template>
 
 <script>
-    import AddGardenForm from '@/CustomComponents/AddGardenForm'
-    import GardenOverview from '@/CustomComponents/GardenOverview'
+    import AddBedForm from "@/CustomComponents/Bed/AddBedForm";
+    import BedOverview from "@/CustomComponents/Bed/BedOverview";
 
     export default {
         components: {
-            AddGardenForm,
-            GardenOverview,
+            AddBedForm,
+            BedOverview,
         },
 
     }

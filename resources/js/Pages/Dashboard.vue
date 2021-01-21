@@ -27,7 +27,7 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import Welcome from '@/Jetstream/Welcome'
-    import Gardens from "@/CustomComponents/Gardens";
+    import Gardens from "@/CustomComponents/Garden/Gardens";
 
     export default {
         props: ['user', 'gardens'],
