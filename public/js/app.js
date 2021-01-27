@@ -1875,6 +1875,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+/* harmony import */ var _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/CustomComponents/Bed/BedOverview */ "./resources/js/CustomComponents/Bed/BedOverview.vue");
 //
 //
 //
@@ -1905,7 +1906,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 
 
 
@@ -1924,6 +1925,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      showForm: false,
       form: this.$inertia.form({
         length: '',
         width: '',
@@ -1932,15 +1934,18 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    toggleShowForm: function toggleShowForm() {
+      this.showForm = !this.showForm;
+    },
     addBed: function addBed() {
       var _this = this;
 
-      console.log(this.form);
-      console.log(this.gardenId);
       this.form.post(route('beds.store'), {
         preserveScroll: true,
         onSuccess: function onSuccess() {
-          return _this.form.reset();
+          _this.form.reset();
+
+          _this.toggleShowForm();
         }
       });
     }
@@ -1997,6 +2002,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2004,7 +2012,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['bedId', 'bedLength', 'bedWidth'],
+  props: ['bedId', 'bedLength', 'bedWidth', 'bedNumber'],
   components: {
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_0__.default,
     JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__.default,
@@ -2119,6 +2127,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -2137,7 +2150,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        garden_name: ''
+        name: '',
+        servings: ''
       })
     };
   },
@@ -2152,10 +2166,16 @@ __webpack_require__.r(__webpack_exports__);
           return _this.form.reset();
         },
         onError: function onError() {
-          if (_this.form.errors.garden_name) {
-            _this.form.reset('garden_name');
+          if (_this.form.errors.name) {
+            _this.form.reset();
 
-            _this.$refs.garden_name.focus();
+            _this.$refs.name.focus();
+          }
+
+          if (_this.form.errors.servings) {
+            _this.form.reset();
+
+            _this.$refs.name.focus();
           }
         }
       });
@@ -2212,6 +2232,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -2220,7 +2245,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['gardenId', 'gardenName', 'hideForm'],
+  props: ['gardenId', 'gardenName', 'gardenServings'],
   components: {
     BedOverview: _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_6__.default,
     AddBedForm: _CustomComponents_Bed_AddBedForm__WEBPACK_IMPORTED_MODULE_5__.default,
@@ -2234,13 +2259,13 @@ __webpack_require__.r(__webpack_exports__);
     return {
       showForm: false,
       form: this.$inertia.form({
-        name: ''
+        name: this.gardenName,
+        servings: this.gardenServings
       })
     };
   },
   methods: {
     toggleShowForm: function toggleShowForm() {
-      console.log(this.showForm);
       this.showForm = !this.showForm;
     },
     updateGarden: function updateGarden() {
@@ -28832,118 +28857,132 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("jet-form-section", {
-    on: {
-      submitted: function($event) {
-        return _vm.addBed()
-      }
-    },
-    scopedSlots: _vm._u([
-      {
-        key: "title",
-        fn: function() {
-          return [_vm._v("\n        Gartenbeet hinzufügen\n    ")]
-        },
-        proxy: true
-      },
-      {
-        key: "form",
-        fn: function() {
-          return [
-            _c(
-              "div",
-              { staticClass: "col-span-6 sm:col-span-4" },
+  return _c(
+    "div",
+    [
+      _c("button", { staticClass: "mb-2", on: { click: _vm.toggleShowForm } }, [
+        _vm._v("Gartenbeet hinzufügen")
+      ]),
+      _vm._v(" "),
+      _vm.showForm
+        ? _c("jet-form-section", {
+            on: {
+              submitted: function($event) {
+                return _vm.addBed()
+              }
+            },
+            scopedSlots: _vm._u(
               [
-                _c("jet-label", { attrs: { for: "length", value: "Länge" } }),
-                _vm._v(" "),
-                _c("jet-input", {
-                  ref: "length",
-                  staticClass: "mt-1 block w-full",
-                  attrs: {
-                    id: "length",
-                    type: "text",
-                    autocomplete: "Länge",
-                    required: ""
+                {
+                  key: "form",
+                  fn: function() {
+                    return [
+                      _c(
+                        "div",
+                        { staticClass: "col-span-6 sm:col-span-4" },
+                        [
+                          _c("jet-label", {
+                            attrs: { for: "length", value: "Länge" }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "length",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "length",
+                              type: "text",
+                              autocomplete: "Länge",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.length,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "length", $$v)
+                              },
+                              expression: "form.length"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.errors.length }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-span-6 sm:col-span-4" },
+                        [
+                          _c("jet-label", {
+                            attrs: { for: "width", value: "Breite" }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input", {
+                            ref: "width",
+                            staticClass: "mt-1 block w-full",
+                            attrs: {
+                              id: "width",
+                              type: "text",
+                              autocomplete: "Breite",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.form.width,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "width", $$v)
+                              },
+                              expression: "form.width"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.errors.width }
+                          })
+                        ],
+                        1
+                      )
+                    ]
                   },
-                  model: {
-                    value: _vm.form.length,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "length", $$v)
-                    },
-                    expression: "form.length"
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.form.errors.length }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-6 sm:col-span-4" },
-              [
-                _c("jet-label", { attrs: { for: "width", value: "Breite" } }),
-                _vm._v(" "),
-                _c("jet-input", {
-                  ref: "width",
-                  staticClass: "mt-1 block w-full",
-                  attrs: {
-                    id: "width",
-                    type: "text",
-                    autocomplete: "Breite",
-                    required: ""
+                  proxy: true
+                },
+                {
+                  key: "actions",
+                  fn: function() {
+                    return [
+                      _c(
+                        "jet-action-message",
+                        {
+                          staticClass: "mr-3",
+                          attrs: { on: _vm.form.recentlySuccessful }
+                        },
+                        [_vm._v("\n                Hinzugefügt.\n            ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "jet-button",
+                        {
+                          class: { "opacity-25": _vm.form.processing },
+                          attrs: { disabled: _vm.form.processing }
+                        },
+                        [_vm._v("\n                Hinzufügen\n            ")]
+                      )
+                    ]
                   },
-                  model: {
-                    value: _vm.form.width,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "width", $$v)
-                    },
-                    expression: "form.width"
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.form.errors.width }
-                })
+                  proxy: true
+                }
               ],
-              1
+              null,
+              false,
+              3353097512
             )
-          ]
-        },
-        proxy: true
-      },
-      {
-        key: "actions",
-        fn: function() {
-          return [
-            _c(
-              "jet-action-message",
-              {
-                staticClass: "mr-3",
-                attrs: { on: _vm.form.recentlySuccessful }
-              },
-              [_vm._v("\n            Hinzugefügt.\n        ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "jet-button",
-              {
-                class: { "opacity-25": _vm.form.processing },
-                attrs: { disabled: _vm.form.processing }
-              },
-              [_vm._v("\n            Hinzufügen\n        ")]
-            )
-          ]
-        },
-        proxy: true
-      }
-    ])
-  })
+          })
+        : _vm._e()
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28979,11 +29018,17 @@ var render = function() {
       }
     },
     [
+      _c("div", { staticClass: "m-2" }, [
+        _vm._v("\n        Beetnummer " + _vm._s(_vm.bedNumber) + "\n    ")
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "m2 flex" },
         [
-          _c("h4", { staticClass: "inline-block mr-1" }, [_vm._v("Länge:")]),
+          _c("h4", { staticClass: "inline-block mr-1 self-center" }, [
+            _vm._v("Länge:")
+          ]),
           _vm._v(" "),
           _c("jet-input", {
             ref: "length",
@@ -29015,7 +29060,9 @@ var render = function() {
         "div",
         { staticClass: "m2 flex" },
         [
-          _c("h3", { staticClass: "inline-block mr-1" }, [_vm._v("Breite:")]),
+          _c("h3", { staticClass: "inline-block mr-1 self-center" }, [
+            _vm._v("Breite:")
+          ]),
           _vm._v(" "),
           _c("jet-input", {
             ref: "width",
@@ -29122,7 +29169,8 @@ var render = function() {
                     attrs: {
                       bedId: bed.id,
                       bedLength: bed.length,
-                      bedWidth: bed.width
+                      bedWidth: bed.width,
+                      bedNumber: bed.bed_number
                     }
                   })
                 ],
@@ -29177,30 +29225,64 @@ var render = function() {
               { staticClass: "col-span-6 sm:col-span-4" },
               [
                 _c("jet-label", {
-                  attrs: { for: "garden_name", value: "Garten Name" }
+                  attrs: { for: "name", value: "Garten Name" }
                 }),
                 _vm._v(" "),
                 _c("jet-input", {
-                  ref: "garden_name",
+                  ref: "name",
                   staticClass: "mt-1 block w-full",
                   attrs: {
-                    id: "garden_name",
+                    id: "ame",
                     type: "text",
                     autocomplete: "Garten Name",
                     required: ""
                   },
                   model: {
-                    value: _vm.form.garden_name,
+                    value: _vm.form.name,
                     callback: function($$v) {
-                      _vm.$set(_vm.form, "garden_name", $$v)
+                      _vm.$set(_vm.form, "name", $$v)
                     },
-                    expression: "form.garden_name"
+                    expression: "form.name"
                   }
                 }),
                 _vm._v(" "),
                 _c("jet-input-error", {
                   staticClass: "mt-2",
-                  attrs: { message: _vm.form.errors.garden_name }
+                  attrs: { message: _vm.form.errors.name }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-6 sm:col-span-4" },
+              [
+                _c("jet-label", {
+                  attrs: { for: "servings", value: "Personen zu versorgen" }
+                }),
+                _vm._v(" "),
+                _c("jet-input", {
+                  ref: "servings",
+                  staticClass: "mt-1 block w-full",
+                  attrs: {
+                    id: "servings",
+                    type: "text",
+                    autocomplete: "0",
+                    required: ""
+                  },
+                  model: {
+                    value: _vm.form.servings,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "servings", $$v)
+                    },
+                    expression: "form.servings"
+                  }
+                }),
+                _vm._v(" "),
+                _c("jet-input-error", {
+                  staticClass: "mt-2",
+                  attrs: { message: _vm.form.errors.servings }
                 })
               ],
               1
@@ -29260,120 +29342,147 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "form",
-      {
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.updateGarden()
+  return _c(
+    "div",
+    [
+      _c("h3", { staticClass: "inline-block font-bold mr-1" }, [
+        _vm._v(_vm._s(_vm.gardenName))
+      ]),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.toggleShowForm } }, [
+        _vm._v("Gartendaten bearbeiten")
+      ]),
+      _vm._v(" "),
+      _c(
+        "inertia-link",
+        {
+          staticClass:
+            "inline-flex b items-center ml-2 px-4 py-2 text-gray-700 border rounded-md font-semibold text-xs uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150",
+          attrs: {
+            method: "delete",
+            as: "button",
+            href: _vm.route("gardens.destroy", _vm.gardenId),
+            "preserve-scroll": "",
+            "preserve-state": ""
           }
-        }
-      },
-      [
-        _c("h3", { staticClass: "inline-block font-bold mr-1" }, [
-          _vm._v(_vm._s(_vm.gardenName))
-        ]),
-        _vm._v(" "),
-        _c("button", { on: { click: _vm.toggleShowForm } }, [
-          _vm._v("Name Bearbeiten")
-        ]),
-        _vm._v(" "),
-        _c(
-          "inertia-link",
-          {
-            staticClass:
-              "inline-flex b items-center ml-2 px-4 py-2 text-gray-700 border rounded-md font-semibold text-xs uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150",
-            attrs: {
-              method: "delete",
-              as: "button",
-              href: _vm.route("gardens.destroy", _vm.gardenId),
-              "preserve-scroll": "",
-              "preserve-state": ""
+        },
+        [_vm._v("\n        Garten Löschen\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.updateGarden()
             }
-          },
-          [_vm._v("\n            Garten Löschen\n        ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.showForm,
-                expression: "showForm"
-              }
-            ]
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "col-span-7 sm:col-span-4" },
-              [
-                _c("jet-input", {
-                  ref: "name",
-                  staticClass: "mt-1 block w-full",
-                  attrs: {
-                    id: "name",
-                    type: "text",
-                    autocomplete: "Garten Name",
-                    required: ""
-                  },
-                  model: {
-                    value: _vm.form.name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "name", $$v)
-                    },
-                    expression: "form.name"
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.form.errors.name }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "jet-action-message",
-              {
-                staticClass: "mr-1",
-                attrs: { on: _vm.form.recentlySuccessful }
-              },
-              [_vm._v("\n                Gespeichert.\n            ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "jet-button",
-              {
-                class: { "opacity-25": _vm.form.processing },
-                attrs: { disabled: _vm.form.processing }
-              },
-              [_vm._v("\n                Speichern\n            ")]
-            )
-          ],
-          1
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "m-4 p-2 border relative" },
-      [
-        _c("add-bed-form", { attrs: { gardenId: _vm.gardenId } }),
-        _vm._v(" "),
-        _c("bed-overview", { attrs: { gardenId: _vm.gardenId } })
-      ],
-      1
-    )
-  ])
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.showForm,
+                  expression: "showForm"
+                }
+              ]
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "col-span-7 sm:col-span-4" },
+                [
+                  _c("jet-input", {
+                    ref: "name",
+                    staticClass: "mt-1 block w-full",
+                    attrs: { id: "name", type: "text", required: "" },
+                    model: {
+                      value: _vm.form.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "name", $$v)
+                      },
+                      expression: "form.name"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("jet-input-error", {
+                    staticClass: "mt-2",
+                    attrs: { message: _vm.form.errors.name }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-span-7 sm:col-span-4 flex" },
+                [
+                  _c("h3", { staticClass: "inline-block mr-1 self-center" }, [
+                    _vm._v("Personen zu versorgen:")
+                  ]),
+                  _vm._v(" "),
+                  _c("jet-input", {
+                    ref: "servings",
+                    staticClass: "mt-1 inline-block flex-grow",
+                    attrs: { id: "servings", type: "text", required: "" },
+                    model: {
+                      value: _vm.form.servings,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "servings", $$v)
+                      },
+                      expression: "form.servings"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("jet-input-error", {
+                    staticClass: "mt-2",
+                    attrs: { message: _vm.form.errors.servings }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "jet-action-message",
+                {
+                  staticClass: "mr-1",
+                  attrs: { on: _vm.form.recentlySuccessful }
+                },
+                [_vm._v("\n                Gespeichert.\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "jet-button",
+                {
+                  class: { "opacity-25": _vm.form.processing },
+                  attrs: { disabled: _vm.form.processing }
+                },
+                [_vm._v("\n                Speichern\n            ")]
+              )
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "m-4 p-2 border relative" },
+        [
+          _c("add-bed-form", { attrs: { gardenId: _vm.gardenId } }),
+          _vm._v(" "),
+          _c("bed-overview", { attrs: { gardenId: _vm.gardenId } })
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -29408,7 +29517,11 @@ var render = function() {
             { staticClass: "m-4 p-2 border relative" },
             [
               _c("garden-details", {
-                attrs: { gardenId: garden.id, gardenName: garden.name }
+                attrs: {
+                  gardenId: garden.id,
+                  gardenName: garden.name,
+                  gardenServings: garden.servings_per_harvest
+                }
               })
             ],
             1

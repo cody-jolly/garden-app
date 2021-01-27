@@ -3,7 +3,7 @@
         <ul>
             <li v-for="garden in gardens" :key="garden.id">
                 <div class="m-4 p-2 border relative">
-                    <garden-details :gardenId="garden.id" :gardenName="garden.name" />
+                    <garden-details :gardenId="garden.id" :gardenName="garden.name" :gardenServings="garden.servings_per_harvest" />
                 </div>
             </li>
         </ul>

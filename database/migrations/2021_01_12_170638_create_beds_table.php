@@ -15,6 +15,7 @@ class CreateBedsTable extends Migration
     {
         Schema::create('beds', function (Blueprint $table) {
             $table->id('id');
+            $table->integer('bed_number');
             $table->integer('width');
             $table->integer('length');
             $table->bigInteger('garden_id')->unsigned(); // References gardens

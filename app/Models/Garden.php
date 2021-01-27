@@ -17,6 +17,7 @@ class Garden extends Model
      */
     protected $fillable = [
         'name',
+        'servings_per_harvest',
     ];
 
     /**

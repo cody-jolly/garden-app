@@ -23,6 +23,7 @@ class CreateBedVarietyTable extends Migration
             $table->foreign('variety_id')
                 ->references('id')
                 ->on('varieties')->onDelete('cascade');
+            $table->bigInteger('area');
         });
     }
 

@@ -29,11 +29,13 @@ class GardenController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'garden_name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'servings' => 'required|int',
         ]);
 
         $request->user()->gardens()->create([
-            'name' => $request->garden_name
+            'name' => $request->name,
+            'servings_per_harvest' => $request->servings,
         ]);
 
         return back();
@@ -64,11 +66,13 @@ class GardenController extends Controller
     public function update(Request $request, $gardenId)
     {
         $this->validate($request, [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'servings' => 'required|int',
         ]);
 
         $request->user()->gardens()->firstWhere('id', $gardenId)->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'servings_per_harvest' => $request->servings,
         ]);
 
         return back();

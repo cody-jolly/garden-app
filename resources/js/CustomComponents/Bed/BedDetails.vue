@@ -1,12 +1,15 @@
 <template>
     <form @submit.prevent="updateBed()">
+        <div class="m-2">
+            Beetnummer {{ bedNumber }}
+        </div>
         <div class="m2 flex">
-            <h4 class="inline-block mr-1">Länge:</h4>
+            <h4 class="inline-block mr-1 self-center">Länge:</h4>
             <jet-input id="length" type="text" class="mt-1 placeholder-black inline-block flex-grow" v-model="form.length" ref="length" :autocomplete="bedLength" required />
             <jet-input-error :message="form.errors.length" class="mt-2" />
         </div>
         <div class="m2 flex">
-            <h3 class="inline-block mr-1">Breite:</h3>
+            <h3 class="inline-block mr-1 self-center">Breite:</h3>
             <jet-input id="width" type="text" class="mt-1 placeholder-black inline-block flex-grow" v-model="form.width" ref="width" :autocomplete="bedWidth" required />
             <jet-input-error :message="form.errors.width" class="mt-2" />
         </div>
@@ -38,7 +41,7 @@
     import JetLabel from '@/Jetstream/Label'
 
     export default {
-        props: ['bedId', 'bedLength', 'bedWidth'],
+        props: ['bedId', 'bedLength', 'bedWidth', 'bedNumber'],
 
         components: {
             JetActionMessage,
@@ -52,7 +55,7 @@
         computed: {
             bedArea: function () {
                 return this.bedLength * this.bedWidth
-            }
+            },
         },
 
         data() {

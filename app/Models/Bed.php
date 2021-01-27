@@ -17,6 +17,7 @@ class Bed extends Model
     protected $fillable = [
         'width',
         'length',
+        'bed_number',
     ];
 
     /**

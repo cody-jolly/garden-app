@@ -35,7 +35,13 @@ class BedController extends Controller
             'garden_id' => 'required|int',
         ]);
 
-        $request->user()->gardens()->firstWhere('id', $request->garden_id)->beds()->create([
+        $garden = $request->user()->gardens()->firstWhere('id', $request->garden_id);
+        $bedNumber = 1;
+        if ($garden->beds()->get()->last()) {
+            $bedNumber = $garden->beds()->get()->last()->bed_number + 1;
+        }
+        $garden->beds()->create([
+            'bed_number' => $bedNumber,
             'length' => $request->length,
             'width'  => $request->width,
         ]);

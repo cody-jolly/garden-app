@@ -1,32 +1,31 @@
 <template>
-    <jet-form-section @submitted="addBed()">
-        <template #title>
-            Gartenbeet hinzufügen
-        </template>
+    <div>
+        <button class="mb-2" v-on:click="toggleShowForm">Gartenbeet hinzufügen</button>
+        <jet-form-section v-if="showForm" @submitted="addBed()">
+            <template #form>
+                <div class="col-span-6 sm:col-span-4">
+                    <jet-label for="length" value="Länge" />
+                    <jet-input id="length" type="text" class="mt-1 block w-full" v-model="form.length" ref="length" autocomplete="Länge" required/>
+                    <jet-input-error :message="form.errors.length" class="mt-2" />
+                </div>
+                <div class="col-span-6 sm:col-span-4">
+                    <jet-label for="width" value="Breite" />
+                    <jet-input id="width" type="text" class="mt-1 block w-full" v-model="form.width" ref="width" autocomplete="Breite" required/>
+                    <jet-input-error :message="form.errors.width" class="mt-2" />
+                </div>
+            </template>
 
-        <template #form>
-            <div class="col-span-6 sm:col-span-4">
-                <jet-label for="length" value="Länge" />
-                <jet-input id="length" type="text" class="mt-1 block w-full" v-model="form.length" ref="length" autocomplete="Länge" required/>
-                <jet-input-error :message="form.errors.length" class="mt-2" />
-            </div>
-            <div class="col-span-6 sm:col-span-4">
-                <jet-label for="width" value="Breite" />
-                <jet-input id="width" type="text" class="mt-1 block w-full" v-model="form.width" ref="width" autocomplete="Breite" required/>
-                <jet-input-error :message="form.errors.width" class="mt-2" />
-            </div>
-        </template>
+            <template #actions>
+                <jet-action-message :on="form.recentlySuccessful" class="mr-3">
+                    Hinzugefügt.
+                </jet-action-message>
 
-        <template #actions>
-            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
-                Hinzugefügt.
-            </jet-action-message>
-
-            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Hinzufügen
-            </jet-button>
-        </template>
-    </jet-form-section>
+                <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Hinzufügen
+                </jet-button>
+            </template>
+        </jet-form-section>
+    </div>
 </template>
 
 <script>
@@ -36,6 +35,7 @@
     import JetInput from '@/Jetstream/Input'
     import JetInputError from '@/Jetstream/InputError'
     import JetLabel from '@/Jetstream/Label'
+    import BedOverview from "@/CustomComponents/Bed/BedOverview";
 
     export default {
         props: ['gardenId'],
@@ -51,6 +51,7 @@
 
         data() {
             return {
+                showForm: false,
                 form: this.$inertia.form({
                     length   : '',
                     width    : '',
@@ -60,12 +61,17 @@
         },
 
         methods: {
+            toggleShowForm() {
+                this.showForm = !this.showForm
+            },
+
             addBed() {
-                console.log(this.form)
-                console.log(this.gardenId)
                 this.form.post(route('beds.store'), {
                     preserveScroll: true,
-                    onSuccess: () => this.form.reset(),
+                    onSuccess: () => {
+                        this.form.reset()
+                        this.toggleShowForm()
+                    }
                 })
             },
         },

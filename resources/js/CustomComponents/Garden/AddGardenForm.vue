@@ -6,9 +6,14 @@
 
         <template #form>
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="garden_name" value="Garten Name" />
-                <jet-input id="garden_name" type="text" class="mt-1 block w-full" v-model="form.garden_name" ref="garden_name" autocomplete="Garten Name" required/>
-                <jet-input-error :message="form.errors.garden_name" class="mt-2" />
+                <jet-label for="name" value="Garten Name" />
+                <jet-input id="ame" type="text" class="mt-1 block w-full" v-model="form.name" ref="name" autocomplete="Garten Name" required/>
+                <jet-input-error :message="form.errors.name" class="mt-2" />
+            </div>
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="servings" value="Personen zu versorgen" />
+                <jet-input id="servings" type="text" class="mt-1 block w-full" v-model="form.servings" ref="servings" autocomplete="0" required/>
+                <jet-input-error :message="form.errors.servings" class="mt-2" />
             </div>
         </template>
 
@@ -45,7 +50,8 @@
         data() {
             return {
                 form: this.$inertia.form({
-                    garden_name: '',
+                    name: '',
+                    servings: '',
                 }),
             }
         },
@@ -57,9 +63,13 @@
                     preserveScroll: true,
                     onSuccess: () => this.form.reset(),
                     onError: () => {
-                        if (this.form.errors.garden_name) {
-                            this.form.reset('garden_name')
-                            this.$refs.garden_name.focus()
+                        if (this.form.errors.name) {
+                            this.form.reset()
+                            this.$refs.name.focus()
+                        }
+                        if (this.form.errors.servings) {
+                            this.form.reset()
+                            this.$refs.name.focus()
                         }
                     }
                 })

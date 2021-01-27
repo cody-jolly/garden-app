@@ -1,16 +1,21 @@
 <template>
     <div>
+        <h3 class="inline-block font-bold mr-1">{{ gardenName }}</h3>
+        <button v-on:click="toggleShowForm">Gartendaten bearbeiten</button>
+        <inertia-link class="inline-flex b items-center ml-2 px-4 py-2 text-gray-700 border rounded-md font-semibold text-xs uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                      method="delete" as="button" :href.prevent="route('gardens.destroy', gardenId)" preserve-scroll preserve-state>
+            Garten Löschen
+        </inertia-link>
         <form @submit.prevent="updateGarden()">
-            <h3 class="inline-block font-bold mr-1">{{ gardenName }}</h3>
-            <button v-on:click="toggleShowForm">Name Bearbeiten</button>
-            <inertia-link class="inline-flex b items-center ml-2 px-4 py-2 text-gray-700 border rounded-md font-semibold text-xs uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
-                          method="delete" as="button" :href.prevent="route('gardens.destroy', gardenId)" preserve-scroll preserve-state>
-                Garten Löschen
-            </inertia-link>
             <div v-show="showForm">
                 <div class="col-span-7 sm:col-span-4">
-                    <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" ref="name" autocomplete="Garten Name" required />
+                    <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" ref="name" required />
                     <jet-input-error :message="form.errors.name" class="mt-2" />
+                </div>
+                <div class="col-span-7 sm:col-span-4 flex">
+                    <h3 class="inline-block mr-1 self-center">Personen zu versorgen:</h3>
+                    <jet-input id="servings" type="text" class="mt-1 inline-block flex-grow" v-model="form.servings" ref="servings" required />
+                    <jet-input-error :message="form.errors.servings" class="mt-2" />
                 </div>
                 <jet-action-message :on="form.recentlySuccessful" class="mr-1">
                     Gespeichert.
@@ -37,7 +42,7 @@
     import BedOverview from "@/CustomComponents/Bed/BedOverview";
 
     export default {
-        props: ['gardenId', 'gardenName', 'hideForm'],
+        props: ['gardenId', 'gardenName', 'gardenServings'],
 
         components: {
             BedOverview,
@@ -53,14 +58,14 @@
             return {
                 showForm: false,
                 form: this.$inertia.form({
-                    name: '',
+                    name: this.gardenName,
+                    servings: this.gardenServings,
                 }),
             }
         },
 
         methods: {
             toggleShowForm() {
-                console.log(this.showForm)
                 this.showForm = !this.showForm
             },
 
