@@ -1875,7 +1875,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
-/* harmony import */ var _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/CustomComponents/Bed/BedOverview */ "./resources/js/CustomComponents/Bed/BedOverview.vue");
 //
 //
 //
@@ -1906,7 +1905,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 
@@ -2127,11 +2125,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -2150,8 +2143,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        name: '',
-        servings: ''
+        name: ''
       })
     };
   },
@@ -2200,9 +2192,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
-/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
-/* harmony import */ var _CustomComponents_Bed_AddBedForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/CustomComponents/Bed/AddBedForm */ "./resources/js/CustomComponents/Bed/AddBedForm.vue");
-/* harmony import */ var _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/CustomComponents/Bed/BedOverview */ "./resources/js/CustomComponents/Bed/BedOverview.vue");
+/* harmony import */ var _CustomComponents_Bed_AddBedForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/CustomComponents/Bed/AddBedForm */ "./resources/js/CustomComponents/Bed/AddBedForm.vue");
+/* harmony import */ var _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/CustomComponents/Bed/BedOverview */ "./resources/js/CustomComponents/Bed/BedOverview.vue");
 //
 //
 //
@@ -2237,7 +2228,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2247,20 +2250,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['gardenId', 'gardenName', 'gardenServings'],
   components: {
-    BedOverview: _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_6__.default,
-    AddBedForm: _CustomComponents_Bed_AddBedForm__WEBPACK_IMPORTED_MODULE_5__.default,
+    BedOverview: _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_5__.default,
+    AddBedForm: _CustomComponents_Bed_AddBedForm__WEBPACK_IMPORTED_MODULE_4__.default,
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_0__.default,
     JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__.default,
     JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_2__.default,
-    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_3__.default,
-    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__.default
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
       showForm: false,
+      varieties: this.$page.props.varieties,
       form: this.$inertia.form({
-        name: this.gardenName,
-        servings: this.gardenServings
+        preferredVarieties: [],
+        servings: this.gardenServings,
+        name: this.gardenName
       })
     };
   },
@@ -2274,8 +2278,6 @@ __webpack_require__.r(__webpack_exports__);
       this.form.put(route('gardens.update', this.gardenId), {
         preserveScroll: true,
         onSuccess: function onSuccess() {
-          _this.form.reset();
-
           _this.toggleShowForm();
         }
       });
@@ -29252,40 +29254,6 @@ var render = function() {
                 })
               ],
               1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-6 sm:col-span-4" },
-              [
-                _c("jet-label", {
-                  attrs: { for: "servings", value: "Personen zu versorgen" }
-                }),
-                _vm._v(" "),
-                _c("jet-input", {
-                  ref: "servings",
-                  staticClass: "mt-1 block w-full",
-                  attrs: {
-                    id: "servings",
-                    type: "text",
-                    autocomplete: "0",
-                    required: ""
-                  },
-                  model: {
-                    value: _vm.form.servings,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "servings", $$v)
-                    },
-                    expression: "form.servings"
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.form.errors.servings }
-                })
-              ],
-              1
             )
           ]
         },
@@ -29350,7 +29318,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("button", { on: { click: _vm.toggleShowForm } }, [
-        _vm._v("Gartendaten bearbeiten")
+        _vm._v("Anbau planen")
       ]),
       _vm._v(" "),
       _c(
@@ -29438,6 +29406,97 @@ var render = function() {
                       expression: "form.servings"
                     }
                   }),
+                  _vm._v(" "),
+                  _c("jet-input-error", {
+                    staticClass: "mt-2",
+                    attrs: { message: _vm.form.errors.servings }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-span-7 sm:col-span-4 flex" },
+                [
+                  _c("h3", { staticClass: "inline-block mr-1 self-center" }, [
+                    _vm._v("Gewünschte Kulturen:")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-wrap" },
+                    _vm._l(_vm.varieties, function(variety) {
+                      return _c("div", { staticClass: "flex items-center" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.preferredVarieties,
+                              expression: "form.preferredVarieties"
+                            }
+                          ],
+                          attrs: { type: "checkbox", id: variety.variety_name },
+                          domProps: {
+                            value: variety.id,
+                            checked: Array.isArray(_vm.form.preferredVarieties)
+                              ? _vm._i(
+                                  _vm.form.preferredVarieties,
+                                  variety.id
+                                ) > -1
+                              : _vm.form.preferredVarieties
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = _vm.form.preferredVarieties,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = variety.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    _vm.$set(
+                                      _vm.form,
+                                      "preferredVarieties",
+                                      $$a.concat([$$v])
+                                    )
+                                } else {
+                                  $$i > -1 &&
+                                    _vm.$set(
+                                      _vm.form,
+                                      "preferredVarieties",
+                                      $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1))
+                                    )
+                                }
+                              } else {
+                                _vm.$set(_vm.form, "preferredVarieties", $$c)
+                              }
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "ml-1 mr-2",
+                            attrs: { for: variety.variety_name }
+                          },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(variety.variety_name) +
+                                "\n                        "
+                            )
+                          ]
+                        )
+                      ])
+                    }),
+                    0
+                  ),
                   _vm._v(" "),
                   _c("jet-input-error", {
                     staticClass: "mt-2",
@@ -30907,9 +30966,13 @@ var render = function() {
                     on: { click: _vm.close }
                   },
                   [
-                    _c("div", {
-                      staticClass: "absolute inset-0 bg-gray-500 opacity-75"
-                    })
+                    _c(
+                      "div",
+                      {
+                        staticClass: "absolute inset-0 bg-gray-500 opacity-75"
+                      },
+                      [_vm._v("Schließen")]
+                    )
                   ]
                 )
               ]

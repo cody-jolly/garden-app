@@ -37,10 +37,10 @@ class Garden extends Model
     }
 
     /**
-     * Get the varieties for the garden.
+     * Get the varieties preferred for the garden.
      */
     public function varieties()
     {
-        return $this->hasManyThrough(Variety::class,Bed::class);
+        return $this->belongsToMany(Variety::class, 'preferred_varieties');
     }
 }

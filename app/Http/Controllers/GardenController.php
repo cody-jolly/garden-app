@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Garden;
+use App\Models\Variety;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,12 +32,11 @@ class GardenController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'servings' => 'required|int',
         ]);
 
         $request->user()->gardens()->create([
             'name' => $request->name,
-            'servings_per_harvest' => $request->servings,
+            'servings_per_harvest' => 0, //TODO possibly rethink DB structure or make nullable
         ]);
 
         return back();
@@ -60,7 +61,7 @@ class GardenController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  $gardenId
+     * @param  Integer $gardenId
      * @return RedirectResponse
      */
     public function update(Request $request, $gardenId)
@@ -68,12 +69,20 @@ class GardenController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'servings' => 'required|int',
+            'preferredVarieties' => 'array',
+            'preferredVarieties.*' => 'int',
         ]);
 
-        $request->user()->gardens()->firstWhere('id', $gardenId)->update([
+        Validator::make(['gardenId' => $gardenId], ['gardenId' => 'required|int'])->validate();
+
+        $garden = $request->user()->gardens()->firstWhere('id', $gardenId);
+
+        $garden->update([
             'name' => $request->name,
             'servings_per_harvest' => $request->servings,
         ]);
+
+        $garden->varieties()->sync(Variety::find($request->preferredVarieties));
 
         return back();
     }

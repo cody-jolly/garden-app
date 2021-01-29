@@ -31,5 +31,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardCon
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('gardens', GardenController::class)->except('create', 'edit');
-    Route::resource('beds', BedController::class);
+    Route::resource('beds', BedController::class)->except('create', 'edit');
+    Route::post('/gardens/prefer-varieties', [GardenController::class, 'preferVarieties'])->name('gardens.prefer-varieties');
 });

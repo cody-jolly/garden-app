@@ -26,7 +26,7 @@ class AddServingsPerHarvestToGardensTable extends Migration
     public function down()
     {
         Schema::table('gardens', function (Blueprint $table) {
-            $table->integer('servings_per_harvest');
+            $table->dropColumn('servings_per_harvest');
         });
     }
 }

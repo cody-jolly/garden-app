@@ -35,7 +35,6 @@
     import JetInput from '@/Jetstream/Input'
     import JetInputError from '@/Jetstream/InputError'
     import JetLabel from '@/Jetstream/Label'
-    import BedOverview from "@/CustomComponents/Bed/BedOverview";
 
     export default {
         props: ['gardenId'],

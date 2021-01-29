@@ -32,4 +32,12 @@ class Variety extends Model
     {
         return $this->belongsToMany(Bed::class);
     }
+
+    /**
+     * The gardens that prefer the variety.
+     */
+    public function gardens()
+    {
+        return $this->belongsToMany(Garden::class, 'preferred_varieties');
+    }
 }

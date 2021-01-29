@@ -10,11 +10,6 @@
                 <jet-input id="ame" type="text" class="mt-1 block w-full" v-model="form.name" ref="name" autocomplete="Garten Name" required/>
                 <jet-input-error :message="form.errors.name" class="mt-2" />
             </div>
-            <div class="col-span-6 sm:col-span-4">
-                <jet-label for="servings" value="Personen zu versorgen" />
-                <jet-input id="servings" type="text" class="mt-1 block w-full" v-model="form.servings" ref="servings" autocomplete="0" required/>
-                <jet-input-error :message="form.errors.servings" class="mt-2" />
-            </div>
         </template>
 
         <template #actions>
@@ -51,7 +46,6 @@
             return {
                 form: this.$inertia.form({
                     name: '',
-                    servings: '',
                 }),
             }
         },
