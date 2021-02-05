@@ -17,6 +17,7 @@
             Fläche: {{ bedArea }}
         </div>
         <div class="m2">
+<!--            TODO list varieties in bed-->
             Kulturen: ...
         </div>
         <jet-action-message :on="form.recentlySuccessful" class="mr-1">

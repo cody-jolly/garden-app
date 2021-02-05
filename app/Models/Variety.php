@@ -22,6 +22,10 @@ class Variety extends Model
         'first_sowing',
         'last_sowing',
         'harvest_window',
+        'first_harvest',
+        'last_harvest',
+        'total_harvests',
+        'total_sowings',
         'multiple_sowings',
     ];
 
@@ -30,7 +34,7 @@ class Variety extends Model
      */
     public function beds()
     {
-        return $this->belongsToMany(Bed::class);
+        return $this->belongsToMany(Bed::class)->withPivot('area', 'sowing_week', 'first_harvest_week');
     }
 
     /**

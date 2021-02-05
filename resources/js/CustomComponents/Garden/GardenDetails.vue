@@ -36,6 +36,8 @@
                 <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Speichern
                 </jet-button>
+<!--                TODO fix garden planning bug: veg production can't be planned until garden update (above) is saved -->
+                <calculate-veg-production :gardenId="gardenId" />
             </div>
         </form>
         <div class="m-4 p-2 border relative">
@@ -52,6 +54,7 @@
     import JetInputError from '@/Jetstream/InputError'
     import AddBedForm from "@/CustomComponents/Bed/AddBedForm"
     import BedOverview from "@/CustomComponents/Bed/BedOverview"
+    import CalculateVegProduction from "@/CustomComponents/Garden/CalculateVegProduction"
 
     export default {
         props: ['gardenId', 'gardenName', 'gardenServings'],
@@ -63,6 +66,7 @@
             JetButton,
             JetInput,
             JetInputError,
+            CalculateVegProduction,
         },
 
         data() {
@@ -89,7 +93,7 @@
                         this.toggleShowForm()
                     }
                 })
-            }
+            },
         },
 
     }

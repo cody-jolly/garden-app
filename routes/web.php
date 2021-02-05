@@ -1,9 +1,9 @@
 <?php
 
+use \App\Actions\VegProduction\CalculateVegProduction;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GardenController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -22,8 +22,6 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
     ]);
 });
 
@@ -33,4 +31,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('gardens', GardenController::class)->except('create', 'edit');
     Route::resource('beds', BedController::class)->except('create', 'edit');
     Route::post('/gardens/prefer-varieties', [GardenController::class, 'preferVarieties'])->name('gardens.prefer-varieties');
+    Route::post('/calculate-veg-production', [CalculateVegProduction::class, 'calculate'])->name('calculate-veg-production');
 });

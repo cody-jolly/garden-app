@@ -20,7 +20,7 @@ class CreateVarietiesTable extends Migration
             $table->integer('servings_per_m2');
             $table->integer('max_low_temp');
             $table->integer('first_sowing');
-            $table->integer('last_sowing');
+            $table->integer('last_sowing')->nullable();
             $table->integer('harvest_window');
             $table->boolean('multiple_sowings');
         });

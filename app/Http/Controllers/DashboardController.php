@@ -15,10 +15,11 @@ class DashboardController extends Controller
         $gardens = Auth::user()->gardens()->get();
         $beds = Auth::user()->beds()->get();
         $varieties = Variety::get();
+
         return Inertia::render('Dashboard', [
             'gardens' => $gardens,
             'beds' => $beds,
             'varieties' => $varieties,
-            ]);
+        ]);
     }
 }
