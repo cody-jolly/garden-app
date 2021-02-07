@@ -36,8 +36,7 @@
                 <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Speichern
                 </jet-button>
-<!--                TODO fix garden planning bug: veg production can't be planned until garden update (above) is saved -->
-                <calculate-veg-production :gardenId="gardenId" />
+                <calculate-veg-production :gardenId="gardenId" v-show="gardenVarieties.length > 0 && gardenServings > 0" />
             </div>
         </form>
         <div class="m-4 p-2 border relative">
@@ -57,7 +56,7 @@
     import CalculateVegProduction from "@/CustomComponents/Garden/CalculateVegProduction"
 
     export default {
-        props: ['gardenId', 'gardenName', 'gardenServings'],
+        props: ['gardenId', 'gardenName', 'gardenServings', 'gardenVarieties'],
 
         components: {
             BedOverview,
@@ -89,9 +88,6 @@
             updateGarden() {
                 this.form.put(route('gardens.update', this.gardenId), {
                     preserveScroll: true,
-                    onSuccess: () => {
-                        this.toggleShowForm()
-                    }
                 })
             },
         },

@@ -2004,6 +2004,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2011,7 +2018,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['bedId', 'bedLength', 'bedWidth', 'bedNumber'],
+  props: ['bedId', 'bedLength', 'bedWidth', 'bedNumber', 'bedVarieties'],
   components: {
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_0__.default,
     JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__.default,
@@ -2295,7 +2302,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2304,7 +2310,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['gardenId', 'gardenName', 'gardenServings'],
+  props: ['gardenId', 'gardenName', 'gardenServings', 'gardenVarieties'],
   components: {
     BedOverview: _CustomComponents_Bed_BedOverview__WEBPACK_IMPORTED_MODULE_5__.default,
     AddBedForm: _CustomComponents_Bed_AddBedForm__WEBPACK_IMPORTED_MODULE_4__.default,
@@ -2330,13 +2336,8 @@ __webpack_require__.r(__webpack_exports__);
       this.showForm = !this.showForm;
     },
     updateGarden: function updateGarden() {
-      var _this = this;
-
       this.form.put(route('gardens.update', this.gardenId), {
-        preserveScroll: true,
-        onSuccess: function onSuccess() {
-          _this.toggleShowForm();
-        }
+        preserveScroll: true
       });
     }
   }
@@ -29150,9 +29151,7 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "m-2" }, [
-        _vm._v(
-          "\n            Beetnummer " + _vm._s(_vm.bedNumber) + "\n        "
-        )
+        _vm._v("\n        Beetnummer " + _vm._s(_vm.bedNumber) + "\n    ")
       ]),
       _vm._v(" "),
       _c(
@@ -29224,17 +29223,51 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "m2" }, [
-        _vm._v("\n            Fläche: " + _vm._s(_vm.bedArea) + "\n        ")
+        _vm._v("\n        Fläche: " + _vm._s(_vm.bedArea) + "\n    ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "m2" }, [
-        _vm._v("\n            Kulturen: ...\n        ")
+        _vm._v("\n        Kulturen:\n        "),
+        _c(
+          "ul",
+          _vm._l(_vm.bedVarieties, function(variety) {
+            return _c("li", { staticClass: "m-2" }, [
+              _c("p", { staticClass: "font-semibold" }, [
+                _vm._v(_vm._s(variety.variety_name))
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Fläche: " +
+                    _vm._s((variety.pivot.area / 10000).toFixed(2)) +
+                    "qm"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Aussaat: KW " + _vm._s(variety.pivot.sowing_week))
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Ernte: KW " +
+                    _vm._s(variety.pivot.first_harvest_week) +
+                    " bis KW " +
+                    _vm._s(
+                      variety.pivot.first_harvest_week + variety.harvest_window
+                    )
+                )
+              ])
+            ])
+          }),
+          0
+        )
       ]),
       _vm._v(" "),
       _c(
         "jet-action-message",
         { staticClass: "mr-1", attrs: { on: _vm.form.recentlySuccessful } },
-        [_vm._v("\n            Gespeichert.\n        ")]
+        [_vm._v("\n        Gespeichert.\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -29243,7 +29276,7 @@ var render = function() {
           class: { "opacity-25": _vm.form.processing },
           attrs: { disabled: _vm.form.processing }
         },
-        [_vm._v("\n            Änderungen Speichern\n        ")]
+        [_vm._v("\n        Änderungen Speichern\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -29259,7 +29292,7 @@ var render = function() {
             "preserve-state": ""
           }
         },
-        [_vm._v("\n            Löschen\n        ")]
+        [_vm._v("\n        Löschen\n    ")]
       )
     ],
     1
@@ -29303,7 +29336,8 @@ var render = function() {
                       bedId: bed.id,
                       bedLength: bed.length,
                       bedWidth: bed.width,
-                      bedNumber: bed.bed_number
+                      bedNumber: bed.bed_number,
+                      bedVarieties: bed.bedVarieties
                     }
                   })
                 ],
@@ -29518,7 +29552,7 @@ var render = function() {
             "preserve-state": ""
           }
         },
-        [_vm._v("\n            Garten Löschen\n        ")]
+        [_vm._v("\n        Garten Löschen\n    ")]
       ),
       _vm._v(" "),
       _c(
@@ -29671,9 +29705,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                " +
+                              "\n                            " +
                                 _vm._s(variety.variety_name) +
-                                "\n                            "
+                                "\n                        "
                             )
                           ]
                         )
@@ -29696,7 +29730,7 @@ var render = function() {
                   staticClass: "mr-1",
                   attrs: { on: _vm.form.recentlySuccessful }
                 },
-                [_vm._v("\n                    Gespeichert.\n                ")]
+                [_vm._v("\n                Gespeichert.\n            ")]
               ),
               _vm._v(" "),
               _c(
@@ -29705,10 +29739,20 @@ var render = function() {
                   class: { "opacity-25": _vm.form.processing },
                   attrs: { disabled: _vm.form.processing }
                 },
-                [_vm._v("\n                    Speichern\n                ")]
+                [_vm._v("\n                Speichern\n            ")]
               ),
               _vm._v(" "),
               _c("calculate-veg-production", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value:
+                      _vm.gardenVarieties.length > 0 && _vm.gardenServings > 0,
+                    expression:
+                      "gardenVarieties.length > 0 && gardenServings > 0"
+                  }
+                ],
                 attrs: { gardenId: _vm.gardenId }
               })
             ],
@@ -29767,7 +29811,8 @@ var render = function() {
                 attrs: {
                   gardenId: garden.id,
                   gardenName: garden.name,
-                  gardenServings: garden.servings_per_harvest
+                  gardenServings: garden.servings_per_harvest,
+                  gardenVarieties: garden.gardenVarieties
                 }
               })
             ],

@@ -20,19 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dc3126b-15bb-4f9e-82b4-8cf465b8a317" name="Default Changelist" comment="add CalculateVegProduction methods and DB infrastructure">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_081422_add_first_harvest_last_harvest_total_harvests_total_sowings_to_varieties_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_085534_add_first_harvest_week_to_bed_variety_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/CustomComponents/Garden/CalculateVegProduction.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/VegProduction/CalculateVegProduction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/VegProduction/CalculateVegProduction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Bed.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Variety.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Variety.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_163621_create_varieties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_21_163621_create_varieties_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/CustomComponents/Bed/BedDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/CustomComponents/Bed/BedDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/CustomComponents/Bed/BedOverview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/CustomComponents/Bed/BedOverview.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/CustomComponents/Garden/GardenDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/CustomComponents/Garden/GardenDetails.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/CustomComponents/Garden/GardenOverview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/CustomComponents/Garden/GardenOverview.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +239,8 @@
       <workItem from="1612454552546" duration="2322000" />
       <workItem from="1612510674519" duration="495000" />
       <workItem from="1612511445738" duration="10656000" />
-      <workItem from="1612553351814" duration="307000" />
+      <workItem from="1612553351814" duration="960000" />
+      <workItem from="1612712759578" duration="6171000" />
     </task>
     <task id="LOCAL-00001" summary="Update gardens and beds migrations, Make GardenController CRUD/REST conform, Add DashboardController, Add Gardens, GardenOverview and AddGardenForm views">
       <created>1610639285070</created>
@@ -275,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611922100349</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add CalculateVegProduction methods and DB infrastructure">
+      <created>1612553709604</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612553709604</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,10 +329,10 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state x="683" y="141" key="SettingsEditor/0.23.1680.959@0.23.1680.959" timestamp="1610616885742" />
-    <state x="0" y="23" width="854" height="940" key="dock-window-1" timestamp="1612553658923">
+    <state x="0" y="23" width="854" height="940" key="dock-window-1" timestamp="1612713009161">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
-    <state x="0" y="23" width="854" height="940" key="dock-window-1/0.23.1680.959@0.23.1680.959" timestamp="1612553658923" />
+    <state x="0" y="23" width="854" height="940" key="dock-window-1/0.23.1680.959@0.23.1680.959" timestamp="1612713009161" />
     <state x="886" y="234" width="670" height="676" key="search.everywhere.popup" timestamp="1611247453533">
       <screen x="0" y="23" width="1680" height="959" />
     </state>

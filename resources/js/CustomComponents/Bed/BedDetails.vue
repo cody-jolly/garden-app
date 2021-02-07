@@ -17,8 +17,15 @@
             Fläche: {{ bedArea }}
         </div>
         <div class="m2">
-<!--            TODO list varieties in bed-->
-            Kulturen: ...
+            Kulturen:
+            <ul>
+                <li v-for="variety in bedVarieties" class="m-2">
+                    <p class="font-semibold">{{ variety.variety_name }}</p>
+                    <p>Fläche: {{ (variety.pivot.area / 10000).toFixed(2) }}qm</p>
+                    <p>Aussaat: KW {{ variety.pivot.sowing_week }}</p>
+                    <p>Ernte: KW {{ variety.pivot.first_harvest_week }} bis KW {{ variety.pivot.first_harvest_week + variety.harvest_window }}</p>
+                </li>
+            </ul>
         </div>
         <jet-action-message :on="form.recentlySuccessful" class="mr-1">
             Gespeichert.
@@ -42,7 +49,7 @@
     import JetLabel from '@/Jetstream/Label'
 
     export default {
-        props: ['bedId', 'bedLength', 'bedWidth', 'bedNumber'],
+        props: ['bedId', 'bedLength', 'bedWidth', 'bedNumber', 'bedVarieties'],
 
         components: {
             JetActionMessage,

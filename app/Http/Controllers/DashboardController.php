@@ -15,6 +15,12 @@ class DashboardController extends Controller
         $gardens = Auth::user()->gardens()->get();
         $beds = Auth::user()->beds()->get();
         $varieties = Variety::get();
+        $gardens->each(function ($garden) {
+            $garden["gardenVarieties"] = $garden->varieties()->get();
+        });
+        $beds->each(function ($bed) {
+            $bed["bedVarieties"] = $bed->varieties()->get();
+        });
 
         return Inertia::render('Dashboard', [
             'gardens' => $gardens,
