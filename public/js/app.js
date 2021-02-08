@@ -29223,7 +29223,11 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "m2" }, [
-        _vm._v("\n        Fläche: " + _vm._s(_vm.bedArea) + "\n    ")
+        _vm._v(
+          "\n        Fläche: " +
+            _vm._s((_vm.bedArea / 10000).toFixed(2)) +
+            "qm\n    "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "m2" }, [

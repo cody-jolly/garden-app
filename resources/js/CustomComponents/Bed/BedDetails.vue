@@ -14,7 +14,7 @@
             <jet-input-error :message="form.errors.width" class="mt-2" />
         </div>
         <div class="m2">
-            Fläche: {{ bedArea }}
+            Fläche: {{ (bedArea / 10000).toFixed(2) }}qm
         </div>
         <div class="m2">
             Kulturen:

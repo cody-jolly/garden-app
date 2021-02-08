@@ -53,25 +53,22 @@ class CalculateVegProduction extends Controller
 
                     // Fill beds with variety until needed area has been accounted for, move to next bed as needed
                     while ($varietyArea > 0 && $bedKey < $beds->count()) {
+                        $currentBedId = $beds[$bedKey]->id;
                         if ($bedAreas[$bedKey] > $varietyArea) {
-                            Bed::firstWhere('id', $beds[$bedKey]->id)->varieties()
-                                ->attach($variety->id, [
-                                    "area" => $varietyArea,
-                                    "sowing_week" => $sowingWeek,
-                                    "first_harvest_week" => $firstHarvestWeek,
-                                ]);
+                            $currentArea = $varietyArea;
                             $bedAreas[$bedKey] -= $varietyArea;
                             $varietyArea = 0;
                         } else if ($bedAreas[$bedKey] < $varietyArea) {
-                            Bed::firstWhere('id', $beds[$bedKey]->id)->varieties()
-                                ->attach($variety->id, [
-                                    "area" => $bedAreas[$bedKey],
-                                    "sowing_week" => $sowingWeek,
-                                    "first_harvest_week" => $firstHarvestWeek,
-                                ]);
-                            $varietyArea -= $bedAreas[$bedKey];
+                            $currentArea = $bedAreas[$bedKey];
+                            $varietyArea -= $currentArea;
                             $bedKey++;
                         }
+                        Bed::firstWhere('id', $currentBedId)->varieties()
+                            ->attach($variety->id, [
+                                "area" => $currentArea,
+                                "sowing_week" => $sowingWeek,
+                                "first_harvest_week" => $firstHarvestWeek,
+                            ]);
                     }
                 }
             }
