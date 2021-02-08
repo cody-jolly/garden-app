@@ -21,25 +21,27 @@ class CalculateVegProduction extends Controller
         $this->validate($request, ['garden_id' => 'required|int',]);
 
         $garden = Auth::user()->gardens()->firstWhere('id', $request->garden_id);
-        $garden->beds->each(function ($item, $key) {
-            $item->varieties()->detach();
+        $garden->beds->each(function ($b) {
+            $b->varieties()->detach();
         });
 
         $beds = $garden->beds;
         $varieties = $garden->varieties;
         $servings = $garden->servings_per_harvest;
 
-        $bed = 0;
-        $totalSowings = [];
+        $bedKey = 0;
+        $bedAreas = [];
         $sowing = 0;
-        $bedArea = $beds[$bed]->width * $beds[$bed]->length;
-        foreach ($varieties as $variety) {
+        $totalSowings = [];
+        forEach ($beds as $bed) {
+            array_push($bedAreas, ($bed->width * $bed->length));
+        }
+        forEach ($varieties as $variety) {
             array_push($totalSowings, $variety->total_sowings);
         }
 
         // Plan available beds with varieties successively until all beds are filled, or all varieties have been planned
-        while ($bed < $beds->count() && $sowing < max($totalSowings)) {
-
+        while ($bedKey < $beds->count() && $sowing < max($totalSowings)) {
             // Go through all varieties for every sowing
             foreach ($varieties as $variety) {
 
@@ -50,35 +52,25 @@ class CalculateVegProduction extends Controller
                     $varietyArea = ceil(((10000 / $variety->servings_per_m2) * $servings) * $variety->harvest_window);
 
                     // Fill beds with variety until needed area has been accounted for, move to next bed as needed
-                    if ($bedArea > $varietyArea) {
-                        Bed::firstWhere('id', $beds[$bed]->id)->varieties()
-                            ->attach($variety->id, [
-                                "area" => $varietyArea,
-                                "sowing_week" => $sowingWeek,
-                                "first_harvest_week" => $firstHarvestWeek,
-                            ]);
-                        $bedArea -= $varietyArea;
-                    } else if ($bedArea < $varietyArea) {
-                        while ($varietyArea > 0 && $bed < $beds->count()) {
-                            Bed::firstWhere('id', $beds[$bed]->id)->varieties()
+                    while ($varietyArea > 0 && $bedKey < $beds->count()) {
+                        if ($bedAreas[$bedKey] > $varietyArea) {
+                            Bed::firstWhere('id', $beds[$bedKey]->id)->varieties()
                                 ->attach($variety->id, [
-                                    "area" => $bedArea,
+                                    "area" => $varietyArea,
                                     "sowing_week" => $sowingWeek,
                                     "first_harvest_week" => $firstHarvestWeek,
                                 ]);
-                            $varietyArea -= $bedArea;
-                            $bed++;
-                            if ($bed < $beds->count()) {
-                                $bedArea = $beds[$bed]->width * $beds[$bed]->length;
-                                Bed::firstWhere('id', $beds[$bed]->id)->varieties()
-                                    ->attach($variety->id, [
-                                        "area" => $varietyArea,
-                                        "sowing_week" => $sowingWeek,
-                                        "first_harvest_week" => $firstHarvestWeek,
-                                    ]);
-                                $bedArea -= $varietyArea;
-                            }
+                            $bedAreas[$bedKey] -= $varietyArea;
                             $varietyArea = 0;
+                        } else if ($bedAreas[$bedKey] < $varietyArea) {
+                            Bed::firstWhere('id', $beds[$bedKey]->id)->varieties()
+                                ->attach($variety->id, [
+                                    "area" => $bedAreas[$bedKey],
+                                    "sowing_week" => $sowingWeek,
+                                    "first_harvest_week" => $firstHarvestWeek,
+                                ]);
+                            $varietyArea -= $bedAreas[$bedKey];
+                            $bedKey++;
                         }
                     }
                 }
