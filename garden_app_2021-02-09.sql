@@ -7,7 +7,7 @@
 #
 # Host: 192.168.10.10 (MySQL 5.7.31-0ubuntu0.18.04.1)
 # Database: garden_app
-# Generation Time: 2021-02-08 17:23:38 +0000
+# Generation Time: 2021-02-09 10:41:40 +0000
 # ************************************************************
 
 
@@ -44,14 +44,6 @@ LOCK TABLES `bed_variety` WRITE;
 
 INSERT INTO `bed_variety` (`id`, `bed_id`, `variety_id`, `area`, `sowing_week`, `first_harvest_week`)
 VALUES
-	(133,16,1,13334,9,21),
-	(134,16,2,16666,9,18),
-	(135,17,2,6192,9,18),
-	(136,17,3,8000,11,19),
-	(137,17,4,15808,21,31),
-	(138,18,4,16192,21,31),
-	(139,18,1,13334,13,25),
-	(140,18,2,474,13,22),
 	(146,13,1,6667,9,21),
 	(147,13,2,11429,9,18),
 	(148,13,3,4000,11,19),
@@ -75,26 +67,20 @@ VALUES
 	(166,15,2,11429,33,42),
 	(167,15,3,4000,23,31),
 	(168,15,3,1995,25,33),
-	(184,23,1,13334,9,21),
-	(185,23,2,22858,9,18),
-	(186,23,3,8000,11,19),
-	(187,23,4,5808,21,31),
-	(188,24,4,26192,21,31),
-	(189,24,1,13334,13,25),
-	(190,24,2,10474,13,22),
-	(191,25,2,12384,13,22),
-	(192,25,3,8000,13,21),
-	(193,25,1,13334,17,29),
-	(194,25,2,16282,17,26),
-	(195,26,2,6576,17,26),
-	(196,26,3,8000,15,23),
-	(197,26,1,13334,21,33),
-	(198,26,2,22090,21,30),
-	(199,27,2,768,21,30),
-	(200,27,3,8000,17,25),
-	(201,27,1,13334,25,37),
-	(202,27,2,22858,25,34),
-	(203,27,3,5040,19,27);
+	(336,16,1,6667,9,21),
+	(337,16,2,11429,9,18),
+	(338,16,3,4000,11,19),
+	(339,16,4,7904,21,31),
+	(340,17,4,8096,21,31),
+	(341,17,1,6667,13,25),
+	(342,17,2,11429,13,22),
+	(343,17,3,3808,13,21),
+	(344,18,3,192,13,21),
+	(345,18,1,6667,17,29),
+	(346,18,2,11429,17,26),
+	(347,18,3,4000,15,23),
+	(348,18,1,6667,21,33),
+	(349,18,2,1045,21,30);
 
 /*!40000 ALTER TABLE `bed_variety` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -128,12 +114,7 @@ VALUES
 	(15,3,100,500,27,'2021-01-28 16:39:33','2021-01-28 16:39:33'),
 	(16,1,100,300,28,'2021-02-02 15:29:33','2021-02-02 15:29:33'),
 	(17,2,100,300,28,'2021-02-02 15:29:40','2021-02-02 15:29:40'),
-	(18,3,100,300,28,'2021-02-02 15:29:45','2021-02-02 15:29:45'),
-	(23,1,100,500,30,'2021-02-08 12:59:10','2021-02-08 12:59:10'),
-	(24,2,100,500,30,'2021-02-08 12:59:16','2021-02-08 12:59:16'),
-	(25,3,100,500,30,'2021-02-08 12:59:22','2021-02-08 12:59:22'),
-	(26,4,100,500,30,'2021-02-08 12:59:29','2021-02-08 12:59:29'),
-	(27,5,100,500,30,'2021-02-08 13:00:13','2021-02-08 13:00:13');
+	(18,3,100,300,28,'2021-02-02 15:29:45','2021-02-02 15:29:45');
 
 /*!40000 ALTER TABLE `beds` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -181,8 +162,7 @@ LOCK TABLES `gardens` WRITE;
 INSERT INTO `gardens` (`id`, `user_id`, `created_at`, `updated_at`, `name`, `servings_per_harvest`)
 VALUES
 	(27,3,'2021-01-28 16:38:41','2021-02-08 10:32:10','Garten 1',2),
-	(28,1,'2021-01-29 09:13:58','2021-02-07 16:48:05','Garten 1',4),
-	(30,1,'2021-02-08 12:59:00','2021-02-08 12:59:38','Garten 2',4);
+	(28,1,'2021-01-29 09:13:58','2021-02-09 08:59:57','Garten 1',2);
 
 /*!40000 ALTER TABLE `gardens` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -220,7 +200,8 @@ VALUES
 	(91,'2021_01_29_105019_create_preferred_varieties_table',4),
 	(93,'2021_02_05_081422_add_first_harvest_last_harvest_total_harvests_total_sowings_to_varieties_table',5),
 	(94,'2021_02_05_083815_add_first_harvest_week_harvest_window_to_bed_variety_table',6),
-	(95,'2021_02_05_085534_add_first_harvest_week_to_bed_variety_table',7);
+	(95,'2021_02_05_085534_add_first_harvest_week_to_bed_variety_table',7),
+	(96,'2021_02_09_093516_add_admin_to_users_table',8);
 
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -286,12 +267,10 @@ VALUES
 	(21,27,1),
 	(22,27,2),
 	(23,27,3),
-	(24,30,1),
-	(25,30,2),
-	(26,30,3),
-	(27,30,4),
-	(34,28,1),
-	(35,28,2);
+	(38,28,2),
+	(40,28,1),
+	(41,28,3),
+	(42,28,4);
 
 /*!40000 ALTER TABLE `preferred_varieties` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -319,7 +298,7 @@ LOCK TABLES `sessions` WRITE;
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`)
 VALUES
-	('QBIovo3bs26SMlwIXaCTjhjT5nC820UAIt3TwiHB',1,'10.0.2.2','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36','YTo2OntzOjY6Il90b2tlbiI7czo0MDoibUdSNjhONHV1cGthY0k4cGhVVjZ5dm5iUDc3dkRDQUhHS1I0S08zMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkcTQyWkFvVlhYT2dScUYyNHlHckwyLkFTRFZJaFZ3UlNiMzJBRUpDLjlJOWhkM29MT0o2VHkiO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJHE0MlpBb1ZYWE9nUnFGMjR5R3JMMi5BU0RWSWhWd1JTYjMyQUVKQy45STloZDNvTE9KNlR5Ijt9',1612804900);
+	('QApNnUGcd4YGYmADZaHkQOaeRwZ6jpaIH0cd4msd',1,'10.0.2.2','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36','YTo1OntzOjY6Il90b2tlbiI7czo0MDoiQmpDSlBkZUhVOHRFOXIxZTRiN0lFcTN4Sjh6Yk5WMEdkNG9VVE9ybyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJHE0MlpBb1ZYWE9nUnFGMjR5R3JMMi5BU0RWSWhWd1JTYjMyQUVKQy45STloZDNvTE9KNlR5IjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRxNDJaQW9WWFhPZ1JxRjI0eUdyTDIuQVNEVkloVndSU2IzMkFFSkMuOUk5aGQzb0xPSjZUeSI7fQ==',1612866596);
 
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -343,6 +322,7 @@ CREATE TABLE `users` (
   `profile_photo_path` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -350,11 +330,11 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`)
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`, `admin`)
 VALUES
-	(1,'Cody Jolly','jolly.cody@gmail.com','2021-01-14 14:47:43','$2y$10$q42ZAoVXXOgRqF24yGrL2.ASDVIhVwRSb32AEJC.9I9hd3oLOJ6Ty',NULL,NULL,NULL,NULL,'profile-photos/fyYQNNnUSy7jjXbRxeHdoCRpdjnpjlNKzBFIwl8y.jpg','2021-01-14 14:47:31','2021-01-21 16:27:42'),
-	(2,'Kristin Jolly','kj@kj.de','2021-01-21 18:01:40','$2y$10$YqNJSzoLPveO55CIET5VkeNXPW0npDkVkN4dhwzgbHUBLDSWkdGwy',NULL,NULL,NULL,NULL,NULL,'2021-01-21 18:01:33','2021-01-21 18:02:46'),
-	(3,'Janine Ol','jo@jo.de','2021-01-28 16:37:13','$2y$10$0S4QkdxwAvDFSwHQIZyqcuPLRBmF5GbeOtuiUIERBYnQYupLV1EIa',NULL,NULL,NULL,NULL,'profile-photos/VJsVer94Wj9gyRkx1HTpC6CIdNJzU0mM0AeekTjE.jpg','2021-01-28 16:36:53','2021-01-28 16:38:02');
+	(1,'Cody Jolly','jolly.cody@gmail.com','2021-01-14 14:47:43','$2y$10$q42ZAoVXXOgRqF24yGrL2.ASDVIhVwRSb32AEJC.9I9hd3oLOJ6Ty',NULL,NULL,NULL,NULL,'profile-photos/fyYQNNnUSy7jjXbRxeHdoCRpdjnpjlNKzBFIwl8y.jpg','2021-01-14 14:47:31','2021-01-21 16:27:42',1),
+	(2,'Kristin Jolly','kj@kj.de','2021-01-21 18:01:40','$2y$10$YqNJSzoLPveO55CIET5VkeNXPW0npDkVkN4dhwzgbHUBLDSWkdGwy',NULL,NULL,NULL,NULL,NULL,'2021-01-21 18:01:33','2021-01-21 18:02:46',0),
+	(3,'Janine Ol','jo@jo.de','2021-01-28 16:37:13','$2y$10$0S4QkdxwAvDFSwHQIZyqcuPLRBmF5GbeOtuiUIERBYnQYupLV1EIa',NULL,NULL,NULL,NULL,'profile-photos/VJsVer94Wj9gyRkx1HTpC6CIdNJzU0mM0AeekTjE.jpg','2021-01-28 16:36:53','2021-01-28 16:38:02',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
