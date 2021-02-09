@@ -22,8 +22,9 @@
                     <div class="flex flex-wrap">
                         <div class="flex items-center" v-for="variety in varieties">
                             <input type="checkbox" :id="variety.variety_name" :value="variety.id" v-model="form.preferredVarieties" />
-                            <label class="ml-1 mr-2" :for="variety.variety_name">
-                                {{ variety.variety_name }}
+                            <label class="ml-1 mr-2 text-blue-500" :for="variety.variety_name">
+                                {{ gardenVarieties.findIndex(v => v.id === variety.id) > -1 ? '(selektiert)' : '' }}
+                                <span class="text-gray-700">{{ variety.variety_name }}</span>
                             </label>
                         </div>
                     </div>
@@ -36,7 +37,7 @@
                 <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Speichern
                 </jet-button>
-                <calculate-veg-production :gardenId="gardenId" v-show="gardenVarieties.length > 0 && gardenServings > 0" />
+                <calculate-veg-production :gardenId="gardenId" v-show="gardenVarieties.length > 0 && gardenServings > 0" @calculated="toggleShowFormTimeout"/>
             </div>
         </form>
         <div class="m-4 p-2 border relative">
@@ -83,6 +84,10 @@
         methods: {
             toggleShowForm() {
                 this.showForm = !this.showForm
+            },
+
+            toggleShowFormTimeout() {
+                setTimeout(this.toggleShowForm, 2750)
             },
 
             updateGarden() {

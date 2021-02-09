@@ -12,8 +12,9 @@ class DashboardController extends Controller
      * Render Dashboard view with necessary data
      */
     public function index() {
-        $gardens = Auth::user()->gardens()->get();
-        $beds = Auth::user()->beds()->get();
+        $user = Auth::user();
+        $gardens = $user->gardens()->get();
+        $beds = $user->beds()->get();
         $varieties = Variety::get();
         $gardens->each(function ($garden) {
             $garden["gardenVarieties"] = $garden->varieties()->get();
@@ -23,6 +24,7 @@ class DashboardController extends Controller
         });
 
         return Inertia::render('Dashboard', [
+            'user' => $user,
             'gardens' => $gardens,
             'beds' => $beds,
             'varieties' => $varieties,

@@ -100,26 +100,28 @@
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Konto Verwalten
-                                        </div>
-
-                                        <jet-dropdown-link :href="route('profile.show')">
-                                            Profil
-                                        </jet-dropdown-link>
-
-                                        <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
-                                            API Tokens
-                                        </jet-dropdown-link>
-
-                                        <div class="border-t border-gray-100"></div>
-
-                                        <!-- Authentication -->
-                                        <form @submit.prevent="logout">
-                                            <jet-dropdown-link as="button">
-                                                Abmelden
+                                        <div class="pt-2 pb-2">
+                                            <jet-dropdown-link :href="route('profile.show')">
+                                                Profil
                                             </jet-dropdown-link>
-                                        </form>
+
+                                            <jet-dropdown-link :href="route('admin.show')" v-if="$page.props.user.admin">
+                                                Admin
+                                            </jet-dropdown-link>
+
+                                            <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
+                                                API Tokens
+                                            </jet-dropdown-link>
+
+                                            <div class="border-t border-gray-100"></div>
+
+                                            <!-- Authentication -->
+                                            <form @submit.prevent="logout">
+                                                <jet-dropdown-link as="button">
+                                                    Abmelden
+                                                </jet-dropdown-link>
+                                            </form>
+                                        </div>
                                     </template>
                                 </jet-dropdown>
                             </div>

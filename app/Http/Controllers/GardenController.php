@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Garden;
 use App\Models\Variety;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\RedirectResponse;
@@ -27,6 +26,7 @@ class GardenController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
@@ -47,6 +47,7 @@ class GardenController extends Controller
      *
      * @param Request $request
      * @return Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function show(Request $request)
     {
@@ -61,8 +62,9 @@ class GardenController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  Integer $gardenId
+     * @param Integer $gardenId
      * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $gardenId)
     {
@@ -92,6 +94,7 @@ class GardenController extends Controller
      *
      * @param  $gardenId
      * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function destroy($gardenId)
     {

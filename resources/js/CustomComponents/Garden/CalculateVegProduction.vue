@@ -31,9 +31,9 @@
 
         methods: {
             calculateGardenPlan() {
-                console.log('planning the thing...')
                 this.form.post(route('calculate-veg-production'), {
                     preserveScroll: true,
+                    onSuccess: () => this.$emit('calculated'),
                 })
             }
         },

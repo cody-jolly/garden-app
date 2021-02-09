@@ -26,6 +26,7 @@ class BedController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
@@ -54,6 +55,7 @@ class BedController extends Controller
      *
      * @param Request $request
      * @return Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function show(Request $request)
     {
@@ -64,6 +66,8 @@ class BedController extends Controller
         if (Auth::check()) {
             return Bed::firstWhere('id', $request->bed_id);
         }
+
+        return response('Gartenbeet könnte nicht gefunden werden!');
     }
 
     /**
@@ -72,6 +76,7 @@ class BedController extends Controller
      * @param Request $request
      * @param $bedId
      * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $bedId)
     {
@@ -87,9 +92,9 @@ class BedController extends Controller
                 'length' => $request->length,
                 'width' => $request->width,
             ]);
-
-            return back();
         }
+
+        return back();
     }
 
     /**
@@ -97,6 +102,7 @@ class BedController extends Controller
      *
      * @param  $bedId
      * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function destroy($bedId)
     {
@@ -104,8 +110,9 @@ class BedController extends Controller
 
         if (Auth::check()) {
             Bed::firstWhere('id', $bedId)->delete();
-
             return back(303);
         }
+
+        return back();
     }
 }

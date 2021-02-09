@@ -6,6 +6,7 @@ namespace App\Actions\VegProduction;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bed;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,8 @@ class CalculateVegProduction extends Controller
      * Calculate vegetable production for garden using varieties and beds.
      *
      * @param Request
+     * @return RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function calculate(Request $request)
     {
@@ -63,8 +66,7 @@ class CalculateVegProduction extends Controller
                             $varietyArea -= $currentArea;
                             $bedKey++;
                         }
-                        Bed::firstWhere('id', $currentBedId)->varieties()
-                            ->attach($variety->id, [
+                        Bed::firstWhere('id', $currentBedId)->varieties()->attach($variety->id, [
                                 "area" => $currentArea,
                                 "sowing_week" => $sowingWeek,
                                 "first_harvest_week" => $firstHarvestWeek,

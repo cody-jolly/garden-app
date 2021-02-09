@@ -1,6 +1,7 @@
 <?php
 
 use \App\Actions\VegProduction\CalculateVegProduction;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GardenController;
@@ -32,4 +33,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('beds', BedController::class)->except('create', 'edit');
     Route::post('/gardens/prefer-varieties', [GardenController::class, 'preferVarieties'])->name('gardens.prefer-varieties');
     Route::post('/calculate-veg-production', [CalculateVegProduction::class, 'calculate'])->name('calculate-veg-production');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.show');
 });

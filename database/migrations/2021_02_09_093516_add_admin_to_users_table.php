@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddServingsPerHarvestToGardensTable extends Migration
+class AddAdminToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddServingsPerHarvestToGardensTable extends Migration
      */
     public function up()
     {
-        Schema::table('gardens', function (Blueprint $table) {
-            $table->integer('servings_per_harvest')->default('0');
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('admin')->default('0');
         });
     }
 
@@ -25,8 +25,8 @@ class AddServingsPerHarvestToGardensTable extends Migration
      */
     public function down()
     {
-        Schema::table('gardens', function (Blueprint $table) {
-            $table->dropColumn('servings_per_harvest');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('admin');
         });
     }
 }
