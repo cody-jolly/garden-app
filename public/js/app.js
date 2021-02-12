@@ -1858,6 +1858,222 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/SecondaryButton */ "./resources/js/Jetstream/SecondaryButton.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_5__.default,
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_0__.default,
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_1__.default,
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_2__.default,
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_3__.default,
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__.default,
+    JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_6__.default
+  },
+  props: ['user'],
+  data: function data() {
+    return {
+      show: false,
+      form: this.$inertia.form({
+        _method: 'PUT',
+        userId: this.user.id,
+        name: this.user.name,
+        email: this.user.email,
+        photo: null
+      }),
+      photoPreview: null
+    };
+  },
+  methods: {
+    updateProfileInformation: function updateProfileInformation() {
+      if (this.$refs.photo) {
+        this.form.photo = this.$refs.photo.files[0];
+        console.log(this.form.photo);
+      }
+
+      this.form.post(route('admin.update-user'), {
+        errorBag: 'updateProfileInformation',
+        preserveScroll: true
+      });
+      console.log('updating the user...');
+    },
+    selectNewPhoto: function selectNewPhoto() {
+      this.$refs.photo.click();
+    },
+    updatePhotoPreview: function updatePhotoPreview() {
+      var _this = this;
+
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        _this.photoPreview = e.target.result;
+      };
+
+      reader.readAsDataURL(this.$refs.photo.files[0]);
+    },
+    deletePhoto: function deletePhoto() {
+      var _this2 = this;
+
+      this.form.post(route('admin.delete-profile-photo'), {
+        preserveScroll: true,
+        onSuccess: function onSuccess() {
+          return _this2.photoPreview = null;
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/Users.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/Users.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _Pages_Profile_UpdatePasswordForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Profile/UpdatePasswordForm */ "./resources/js/Pages/Profile/UpdatePasswordForm.vue");
+/* harmony import */ var _CustomComponents_Admin_AdminUpdateProfileInformationForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/CustomComponents/Admin/AdminUpdateProfileInformationForm */ "./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    UpdatePasswordForm: _Pages_Profile_UpdatePasswordForm__WEBPACK_IMPORTED_MODULE_0__.default,
+    AdminUpdateProfileInformationForm: _CustomComponents_Admin_AdminUpdateProfileInformationForm__WEBPACK_IMPORTED_MODULE_1__.default
+  },
+  data: function data() {
+    return {
+      show: {}
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    {
+      this.$page.props.users.forEach(function (u, index) {
+        return _this.show[index] = false;
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Bed/AddBedForm.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Bed/AddBedForm.vue?vue&type=script&lang=js& ***!
@@ -24987,6 +25203,45 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _AdminUpdateProfileInformationForm_vue_vue_type_template_id_b6defc96___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96& */ "./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96&");
+/* harmony import */ var _AdminUpdateProfileInformationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js& */ "./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _AdminUpdateProfileInformationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _AdminUpdateProfileInformationForm_vue_vue_type_template_id_b6defc96___WEBPACK_IMPORTED_MODULE_0__.render,
+  _AdminUpdateProfileInformationForm_vue_vue_type_template_id_b6defc96___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/Admin/Users.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/CustomComponents/Admin/Users.vue ***!
@@ -24999,15 +25254,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var _Users_vue_vue_type_template_id_f0bd7c04___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Users.vue?vue&type=template&id=f0bd7c04& */ "./resources/js/CustomComponents/Admin/Users.vue?vue&type=template&id=f0bd7c04&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Users.vue?vue&type=script&lang=js& */ "./resources/js/CustomComponents/Admin/Users.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 ;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
-  script,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
   _Users_vue_vue_type_template_id_f0bd7c04___WEBPACK_IMPORTED_MODULE_0__.render,
   _Users_vue_vue_type_template_id_f0bd7c04___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -27317,6 +27574,38 @@ component.options.__file = "resources/js/Pages/Welcome.vue"
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminUpdateProfileInformationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminUpdateProfileInformationForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/CustomComponents/Admin/Users.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/Users.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Users.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/Users.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/Bed/AddBedForm.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************!*\
   !*** ./resources/js/CustomComponents/Bed/AddBedForm.vue?vue&type=script&lang=js& ***!
@@ -28194,6 +28483,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Welcome.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96& ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminUpdateProfileInformationForm_vue_vue_type_template_id_b6defc96___WEBPACK_IMPORTED_MODULE_0__.render,
+/* harmony export */   "staticRenderFns": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminUpdateProfileInformationForm_vue_vue_type_template_id_b6defc96___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminUpdateProfileInformationForm_vue_vue_type_template_id_b6defc96___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96&");
+
 
 /***/ }),
 
@@ -29217,6 +29523,288 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96&":
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdateProfileInformationForm.vue?vue&type=template&id=b6defc96& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* binding */ render,
+/* harmony export */   "staticRenderFns": () => /* binding */ staticRenderFns
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            _vm.show = !_vm.show
+          }
+        }
+      },
+      [_vm._v(_vm._s(_vm.user.email))]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [
+        _c("jet-form-section", {
+          on: { submitted: _vm.updateProfileInformation },
+          scopedSlots: _vm._u([
+            {
+              key: "title",
+              fn: function() {
+                return [
+                  _vm._v("\n                Profil Information\n            ")
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "form",
+              fn: function() {
+                return [
+                  _vm.$page.props.jetstream.managesProfilePhotos
+                    ? _c(
+                        "div",
+                        { staticClass: "col-span-6 sm:col-span-4" },
+                        [
+                          _c("input", {
+                            ref: "photo",
+                            staticClass: "hidden",
+                            attrs: { type: "file" },
+                            on: { change: _vm.updatePhotoPreview }
+                          }),
+                          _vm._v(" "),
+                          _c("jet-label", {
+                            attrs: { for: "photo", value: "Photo" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: !_vm.photoPreview,
+                                  expression: "! photoPreview"
+                                }
+                              ],
+                              staticClass: "mt-2"
+                            },
+                            [
+                              _c("img", {
+                                staticClass:
+                                  "rounded-full h-20 w-20 object-cover",
+                                attrs: {
+                                  src: _vm.user.profile_photo_url,
+                                  alt: _vm.user.name
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.photoPreview,
+                                  expression: "photoPreview"
+                                }
+                              ],
+                              staticClass: "mt-2"
+                            },
+                            [
+                              _c("span", {
+                                staticClass: "block rounded-full w-20 h-20",
+                                style:
+                                  "background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('" +
+                                  _vm.photoPreview +
+                                  "');"
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "jet-secondary-button",
+                            {
+                              staticClass: "mt-2 mr-2",
+                              attrs: { type: "button" },
+                              nativeOn: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.selectNewPhoto($event)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        Neues Foto auswählen\n                    "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm.user.profile_photo_path
+                            ? _c(
+                                "jet-secondary-button",
+                                {
+                                  staticClass: "mt-2",
+                                  attrs: { type: "button" },
+                                  nativeOn: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.deletePhoto($event)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        Foto löschen\n                    "
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("jet-input-error", {
+                            staticClass: "mt-2",
+                            attrs: { message: _vm.form.errors.photo }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { for: "name", value: "Name" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: {
+                          id: "name",
+                          type: "text",
+                          autocomplete: "name"
+                        },
+                        model: {
+                          value: _vm.form.name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "name", $$v)
+                          },
+                          expression: "form.name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.name }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { for: "email", value: "Email" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { id: "email", type: "email" },
+                        model: {
+                          value: _vm.form.email,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "email", $$v)
+                          },
+                          expression: "form.email"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.email }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "actions",
+              fn: function() {
+                return [
+                  _c(
+                    "jet-action-message",
+                    {
+                      staticClass: "mr-3",
+                      attrs: { on: _vm.form.recentlySuccessful }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Gespeichert.\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-button",
+                    {
+                      class: { "opacity-25": _vm.form.processing },
+                      attrs: { disabled: _vm.form.processing }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Speichern\n                "
+                      )
+                    ]
+                  )
+                ]
+              },
+              proxy: true
+            }
+          ])
+        })
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/Users.vue?vue&type=template&id=f0bd7c04&":
 /*!*****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/Users.vue?vue&type=template&id=f0bd7c04& ***!
@@ -29233,7 +29821,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    Hello Users\n")])
+  return _c(
+    "div",
+    _vm._l(_vm.$page.props.users, function(user) {
+      return _c("div", [
+        _c(
+          "div",
+          [
+            _c("admin-update-profile-information-form", {
+              attrs: { user: user }
+            })
+          ],
+          1
+        )
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -29258,7 +29862,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    Hello Varieties\n")])
+  return _c("div", [
+    _vm._v("\n        " + _vm._s(_vm.$page.props.varieties) + "\n    ")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

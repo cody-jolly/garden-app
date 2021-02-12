@@ -15,7 +15,6 @@ class DashboardController extends Controller
         $user = Auth::user();
         $gardens = $user->gardens()->get();
         $beds = $user->beds()->get();
-        $varieties = Variety::get();
         $gardens->each(function ($garden) {
             $garden["gardenVarieties"] = $garden->varieties()->get();
         });
@@ -27,7 +26,7 @@ class DashboardController extends Controller
             'user' => $user,
             'gardens' => $gardens,
             'beds' => $beds,
-            'varieties' => $varieties,
+            'varieties' => Variety::get(),
         ]);
     }
 }
