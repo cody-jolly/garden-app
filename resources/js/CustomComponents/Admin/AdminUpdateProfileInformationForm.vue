@@ -67,6 +67,10 @@
                     </jet-button>
                 </template>
             </jet-form-section>
+<!--            Password -->
+            <div>
+                <admin-update-password-form class="mt-10 sm:mt-0" :user="user" />
+            </div>
         </div>
     </div>
 </template>
@@ -79,9 +83,11 @@
     import JetLabel from '@/Jetstream/Label'
     import JetActionMessage from '@/Jetstream/ActionMessage'
     import JetSecondaryButton from '@/Jetstream/SecondaryButton'
+    import AdminUpdatePasswordForm from "@/CustomComponents/Admin/AdminUpdatePasswordForm";
 
     export default {
         components: {
+            AdminUpdatePasswordForm,
             JetActionMessage,
             JetButton,
             JetFormSection,

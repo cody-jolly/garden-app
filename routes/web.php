@@ -36,4 +36,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.show');
     Route::put('/admin/update-user', [AdminController::class, 'updateUser'])->name('admin.update-user');
     Route::put('/admin/delete-profile-photo', [AdminController::class, 'deleteProfilePhoto'])->name('admin.delete-profile-photo');
+    Route::put('/admin/update-user-password', [AdminController::class, 'updatePassword'])->name('admin.update-user-password');
 });

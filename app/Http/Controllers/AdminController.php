@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
+use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 
 class AdminController extends Controller
 {
@@ -84,8 +85,26 @@ class AdminController extends Controller
 
         User::firstWhere('id', $request->userId)->deleteProfilePhoto();
 
-//        update([ 'profile_photo_path' => '' ]);
-
         return back(303)->with('status', 'profile-photo-deleted');
+    }
+
+    /**
+     * Update the user's password.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Fortify\Contracts\UpdatesUserPasswords  $updater
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updatePassword(Request $request, UpdatesUserPasswords $updater)
+    {
+        $this->validate($request, [
+            'userId' => 'required|int',
+        ]);
+
+        $user = User::firstWhere('id', $request->userId);
+
+        $updater->update($user, $request->all());
+
+        return back();
     }
 }
