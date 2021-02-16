@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GardenController;
+use App\Http\Controllers\VarietyController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -33,6 +34,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('beds', BedController::class)->except('create', 'edit');
     Route::post('/gardens/prefer-varieties', [GardenController::class, 'preferVarieties'])->name('gardens.prefer-varieties');
     Route::post('/calculate-veg-production', [CalculateVegProduction::class, 'calculate'])->name('calculate-veg-production');
+
+    //Admin Routes
+    Route::resource('varieties', VarietyController::class)->except('create', 'edit');
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.show');
     Route::put('/admin/update-user', [AdminController::class, 'updateUser'])->name('admin.update-user');
     Route::put('/admin/delete-profile-photo', [AdminController::class, 'deleteProfilePhoto'])->name('admin.delete-profile-photo');

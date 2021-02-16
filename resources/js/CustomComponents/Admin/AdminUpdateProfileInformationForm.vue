@@ -1,7 +1,7 @@
 <!-- Adapted from Laravel/Jetstream UpdateProfileInformationFomr.vue -->
 <template>
     <div>
-        <button @click="show = !show">{{ user.email }}</button>
+        <button @click="show = !show" class="font-semibold text-lg">{{ user.id }}. {{ user.email }}</button>
         <div v-show="show">
 
             <jet-form-section @submitted="updateProfileInformation">
@@ -44,15 +44,15 @@
 
                     <!-- Name -->
                     <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="name" value="Name" />
-                        <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" autocomplete="name" />
+                        <jet-label value="Name" />
+                        <jet-input type="text" class="mt-1 block w-full" v-model="form.name" autocomplete="name" />
                         <jet-input-error :message="form.errors.name" class="mt-2" />
                     </div>
 
                     <!-- Email -->
                     <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="email" value="Email" />
-                        <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" />
+                        <jet-label value="Email" />
+                        <jet-input type="email" class="mt-1 block w-full" v-model="form.email" />
                         <jet-input-error :message="form.errors.email" class="mt-2" />
                     </div>
                 </template>
@@ -84,9 +84,11 @@
     import JetActionMessage from '@/Jetstream/ActionMessage'
     import JetSecondaryButton from '@/Jetstream/SecondaryButton'
     import AdminUpdatePasswordForm from "@/CustomComponents/Admin/AdminUpdatePasswordForm";
+    import SecondaryButton from "@/Jetstream/SecondaryButton";
 
     export default {
         components: {
+            SecondaryButton,
             AdminUpdatePasswordForm,
             JetActionMessage,
             JetButton,
@@ -118,15 +120,12 @@
             updateProfileInformation() {
                 if (this.$refs.photo) {
                     this.form.photo = this.$refs.photo.files[0]
-                    console.log(this.form.photo)
                 }
 
                 this.form.post(route('admin.update-user'), {
                     errorBag: 'updateProfileInformation',
                     preserveScroll: true,
                 });
-
-                console.log('updating the user...')
             },
 
             selectNewPhoto() {

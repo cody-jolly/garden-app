@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div v-for="(user) in $page.props.users">
-            <div>
+        <h2 class="font-bold text-lg m-1">Users</h2>
+        <div v-for="user in $page.props.users">
+            <div class="m-3">
                 <admin-update-profile-information-form :user="user" />
             </div>
         </div>
@@ -16,18 +17,6 @@
         components: {
             AdminUpdatePasswordForm,
             AdminUpdateProfileInformationForm,
-        },
-
-        data () {
-            return {
-                show: {},
-            }
-        },
-
-        mounted () {
-            {
-                this.$page.props.users.forEach((u,index) => this.show[index] = false)
-            }
         },
     }
 </script>

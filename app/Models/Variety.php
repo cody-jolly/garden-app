@@ -30,6 +30,12 @@ class Variety extends Model
     ];
 
     /**
+     *  Disable timestamps for Variety model
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The beds that belong to the variety.
      */
     public function beds()

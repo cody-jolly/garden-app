@@ -6,20 +6,20 @@
 
         <template #form>
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="current_password" value="Passwort" />
-                <jet-input id="current_password" type="password" class="mt-1 block w-full" v-model="form.current_password" ref="current_password" autocomplete="passwort" />
+                <jet-label value="Passwort" />
+                <jet-input type="password" class="mt-1 block w-full" v-model="form.current_password" ref="current_password" autocomplete="passwort" />
                 <jet-input-error :message="form.errors.current_password" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password" value="Neues Passwort" />
-                <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" ref="password" autocomplete="neues-passwort" />
+                <jet-label value="Neues Passwort" />
+                <jet-input type="password" class="mt-1 block w-full" v-model="form.password" ref="password" autocomplete="neues-passwort" />
                 <jet-input-error :message="form.errors.password" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password_confirmation" value="Neues Passwort wiederholen" />
-                <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" autocomplete="neues-passwort" />
+                <jet-label value="Neues Passwort wiederholen" />
+                <jet-input type="password" class="mt-1 block w-full" v-model="form.password_confirmation" autocomplete="neues-passwort" />
                 <jet-input-error :message="form.errors.password_confirmation" class="mt-2" />
             </div>
         </template>

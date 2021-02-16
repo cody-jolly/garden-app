@@ -1,6 +1,20 @@
 <template>
     <div>
-<!--        TODO create CRUD ui and controller for Varieties-->
-        {{ $page.props.varieties }}
+        <h2 class="font-bold text-lg m-1">Varieties</h2>
+        <div v-for="variety in $page.props.varieties">
+            <div class="m-3">
+                <admin-update-variety-information-form :variety="variety" />
+            </div>
+        </div>
     </div>
 </template>
+
+<script>
+    import AdminUpdateVarietyInformationForm from '@/CustomComponents/Admin/AdminUpdateVarietyInformationForm'
+
+    export default {
+        components: {
+            AdminUpdateVarietyInformationForm,
+        },
+    }
+</script>
