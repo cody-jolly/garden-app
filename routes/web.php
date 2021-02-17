@@ -34,8 +34,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('beds', BedController::class)->except('create', 'edit');
     Route::post('/gardens/prefer-varieties', [GardenController::class, 'preferVarieties'])->name('gardens.prefer-varieties');
     Route::post('/calculate-veg-production', [CalculateVegProduction::class, 'calculate'])->name('calculate-veg-production');
+});
 
-    //Admin Routes
+Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::resource('varieties', VarietyController::class)->except('create', 'edit');
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.show');
     Route::put('/admin/update-user', [AdminController::class, 'updateUser'])->name('admin.update-user');

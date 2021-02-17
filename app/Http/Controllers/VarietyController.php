@@ -2,7 +2,6 @@
 // TODO finish VarietyContorller
 namespace App\Http\Controllers;
 
-use App\Models\Bed;
 use App\Models\Variety;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
