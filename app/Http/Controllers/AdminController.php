@@ -19,14 +19,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->admin === 1) {
-            return Inertia::render('Admin', [
-                'users' => User::get(),
-                'varieties' => Variety::get(),
-            ]);
-        }
-
-        return redirect()->route('dashboard');
+        return Inertia::render('Admin', [
+            'users' => User::get(),
+            'varieties' => Variety::get(),
+        ]);
     }
 
     /**
@@ -37,10 +33,6 @@ class AdminController extends Controller
      */
     public function updateUser(Request $request)
     {
-        if (Auth::user()->admin != 1) {
-            return back('401');
-        }
-
         $user = User::firstWhere('id', $request->userId);
 
         if ($user->isEmpty) {
@@ -75,10 +67,6 @@ class AdminController extends Controller
      */
     public function deleteProfilePhoto(Request $request)
     {
-        if (Auth::user()->admin != 1) {
-            return back('401');
-        }
-
         $this->validate($request, [
             'userId' => 'required|int',
         ]);

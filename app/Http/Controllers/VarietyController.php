@@ -67,22 +67,20 @@ class VarietyController extends Controller
 
         Validator::make(['varietyId' => $id], ['varietyId' => 'required|int'])->validate();
 
-        if (Auth::user()->admin === 1) {
-            Variety::firstWhere('id', $id)->update([
-                'variety_name' => $request->name,
-                'weeks_to_maturity' => $request->weeksToMaturity,
-                'servings_per_m2' => $request->servingsPerM2,
-                'max_low_temp' => $request->maxLowTemp,
-                'first_sowing' => $request->firstSowing,
-                'last_sowing' => $request->lastSowing,
-                'harvest_window' => $request->harvestWindow,
-                'multiple_sowings' => $request->multipleSowings,
-                'first_harvest' => $request->firstHarvest,
-                'last_harvest' => $request->lastHarvest,
-                'total_harvests' => $request->totalHarvests,
-                'total_sowings' => $request->totalSowings,
-            ]);
-        }
+        Variety::firstWhere('id', $id)->update([
+            'variety_name' => $request->name,
+            'weeks_to_maturity' => $request->weeksToMaturity,
+            'servings_per_m2' => $request->servingsPerM2,
+            'max_low_temp' => $request->maxLowTemp,
+            'first_sowing' => $request->firstSowing,
+            'last_sowing' => $request->lastSowing,
+            'harvest_window' => $request->harvestWindow,
+            'multiple_sowings' => $request->multipleSowings,
+            'first_harvest' => $request->firstHarvest,
+            'last_harvest' => $request->lastHarvest,
+            'total_harvests' => $request->totalHarvests,
+            'total_sowings' => $request->totalSowings,
+        ]);
 
         return back();
     }

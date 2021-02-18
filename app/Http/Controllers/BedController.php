@@ -63,11 +63,7 @@ class BedController extends Controller
             'bed_id' => 'required|int'
         ]);
 
-        if (Auth::check()) {
-            return Bed::firstWhere('id', $request->bed_id);
-        }
-
-        return response('Gartenbeet könnte nicht gefunden werden!');
+        return Bed::firstWhere('id', $request->bed_id);
     }
 
     /**
@@ -87,12 +83,10 @@ class BedController extends Controller
 
         Validator::make(['bedId' => $bedId], ['bedId' => 'required|int'])->validate();
 
-        if (Auth::check()) {
-            Bed::firstWhere('id', $bedId)->update([
-                'length' => $request->length,
-                'width' => $request->width,
-            ]);
-        }
+        Bed::firstWhere('id', $bedId)->update([
+            'length' => $request->length,
+            'width' => $request->width,
+        ]);
 
         return back();
     }
@@ -108,11 +102,7 @@ class BedController extends Controller
     {
         Validator::make(['bedId' => $bedId], ['bedId' => 'required|int'])->validate();
 
-        if (Auth::check()) {
-            Bed::firstWhere('id', $bedId)->delete();
-            return back(303);
-        }
-
-        return back();
+        Bed::firstWhere('id', $bedId)->delete();
+        return back(303);
     }
 }
