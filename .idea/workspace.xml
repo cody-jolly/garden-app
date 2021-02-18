@@ -22,8 +22,6 @@
     <list default="true" id="1dc3126b-15bb-4f9e-82b4-8cf465b8a317" name="Default Changelist" comment="add CalculateVegProduction methods and DB infrastructure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminUserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BedController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietyController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -253,7 +251,7 @@
       <workItem from="1613465989949" duration="7325000" />
       <workItem from="1613575861968" duration="5000" />
       <workItem from="1613583088346" duration="1977000" />
-      <workItem from="1613674591219" duration="434000" />
+      <workItem from="1613674591219" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="Update gardens and beds migrations, Make GardenController CRUD/REST conform, Add DashboardController, Add Gardens, GardenOverview and AddGardenForm views">
       <created>1610639285070</created>
