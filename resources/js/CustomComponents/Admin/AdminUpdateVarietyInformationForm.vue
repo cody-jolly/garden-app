@@ -102,9 +102,9 @@
                     <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Speichern
                     </jet-button>
+                    <admin-delete-variety :id="variety.id" />
                 </template>
             </jet-form-section>
-<!--            TODO finish CRUD ui-->
         </div>
     </div>
 </template>
@@ -119,6 +119,7 @@
     import JetInputError from "@/Jetstream/InputError";
     import JetLabel from "@/Jetstream/Label";
     import JetSecondaryButton from "@/Jetstream/SecondaryButton";
+    import AdminDeleteVariety from '@/CustomComponents/Admin/AdminDeleteVariety'
 
     export default {
         props: ['variety'],
@@ -133,6 +134,7 @@
             JetInputError,
             JetLabel,
             JetSecondaryButton,
+            AdminDeleteVariety,
         },
 
         data() {

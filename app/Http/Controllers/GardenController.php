@@ -36,7 +36,7 @@ class GardenController extends Controller
 
         $request->user()->gardens()->create([
             'name' => $request->name,
-            'servings_per_harvest' => 0, //TODO possibly rethink DB structure or make nullable
+            'servings_per_harvest' => 0, 
         ]);
 
         return back();
