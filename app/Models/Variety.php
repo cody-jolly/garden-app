@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Variety extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -28,6 +29,8 @@ class Variety extends Model
         'total_sowings',
         'multiple_sowings',
     ];
+
+    protected $dates = ['deleted_at'];
 
     /**
      *  Disable timestamps for Variety model

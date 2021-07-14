@@ -1858,6 +1858,190 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/SecondaryButton */ "./resources/js/Jetstream/SecondaryButton.vue");
+/* harmony import */ var _CustomComponents_Admin_AdminUpdatePasswordForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/CustomComponents/Admin/AdminUpdatePasswordForm */ "./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue");
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['variety'],
+  components: {
+    SecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_0__.default,
+    AdminUpdatePasswordForm: _CustomComponents_Admin_AdminUpdatePasswordForm__WEBPACK_IMPORTED_MODULE_1__.default,
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_2__.default,
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_3__.default,
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_4__.default,
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_5__.default,
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_6__.default,
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_7__.default,
+    JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {
+      show: false,
+      form: this.$inertia.form({
+        _method: 'POST',
+        name: '',
+        weeksToMaturity: '',
+        servingsPerM2: '',
+        maxLowTemp: '',
+        firstSowing: '',
+        lastSowing: '',
+        harvestWindow: '',
+        multipleSowings: '',
+        firstHarvest: '',
+        lastHarvest: '',
+        totalHarvests: '',
+        totalSowings: ''
+      })
+    };
+  },
+  methods: {
+    addVariety: function addVariety() {
+      console.log(this.form);
+      this.form.post(route('varieties.store'), {
+        errorBag: 'addVariety',
+        preserveScroll: true
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue?vue&type=script&lang=js& ***!
@@ -2372,6 +2556,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var _CustomComponents_Admin_AdminUpdateVarietyInformationForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/CustomComponents/Admin/AdminUpdateVarietyInformationForm */ "./resources/js/CustomComponents/Admin/AdminUpdateVarietyInformationForm.vue");
+/* harmony import */ var _CustomComponents_Admin_AdminAddVarietyForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/CustomComponents/Admin/AdminAddVarietyForm */ "./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2384,9 +2574,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    AdminUpdateVarietyInformationForm: _CustomComponents_Admin_AdminUpdateVarietyInformationForm__WEBPACK_IMPORTED_MODULE_0__.default
+    AdminUpdateVarietyInformationForm: _CustomComponents_Admin_AdminUpdateVarietyInformationForm__WEBPACK_IMPORTED_MODULE_0__.default,
+    AdminAddVarietyForm: _CustomComponents_Admin_AdminAddVarietyForm__WEBPACK_IMPORTED_MODULE_1__.default
   }
 });
 
@@ -25521,6 +25713,45 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _AdminAddVarietyForm_vue_vue_type_template_id_6ddc1520___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520& */ "./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520&");
+/* harmony import */ var _AdminAddVarietyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminAddVarietyForm.vue?vue&type=script&lang=js& */ "./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _AdminAddVarietyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _AdminAddVarietyForm_vue_vue_type_template_id_6ddc1520___WEBPACK_IMPORTED_MODULE_0__.render,
+  _AdminAddVarietyForm_vue_vue_type_template_id_6ddc1520___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue":
 /*!*************************************************************************!*\
   !*** ./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue ***!
@@ -27972,6 +28203,22 @@ component.options.__file = "resources/js/Pages/Welcome.vue"
 
 /***/ }),
 
+/***/ "./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAddVarietyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdminAddVarietyForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAddVarietyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************!*\
   !*** ./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue?vue&type=script&lang=js& ***!
@@ -28929,6 +29176,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Welcome.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520& ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAddVarietyForm_vue_vue_type_template_id_6ddc1520___WEBPACK_IMPORTED_MODULE_0__.render,
+/* harmony export */   "staticRenderFns": () => /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAddVarietyForm_vue_vue_type_template_id_6ddc1520___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminAddVarietyForm_vue_vue_type_template_id_6ddc1520___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520&");
+
 
 /***/ }),
 
@@ -30003,6 +30267,437 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminAddVarietyForm.vue?vue&type=template&id=6ddc1520& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* binding */ render,
+/* harmony export */   "staticRenderFns": () => /* binding */ staticRenderFns
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass: "font-semibold text-lg",
+        on: {
+          click: function($event) {
+            _vm.show = !_vm.show
+          }
+        }
+      },
+      [_vm._v("Add Variety")]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [
+        _c("jet-form-section", {
+          on: { submitted: _vm.addVariety },
+          scopedSlots: _vm._u([
+            {
+              key: "title",
+              fn: function() {
+                return [
+                  _vm._v("\n                Variety Information\n            ")
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "form",
+              fn: function() {
+                return [
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Name" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "name" },
+                        model: {
+                          value: _vm.form.name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "name", $$v)
+                          },
+                          expression: "form.name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.name }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { value: "Weeks to Maturity" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.weeksToMaturity,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "weeksToMaturity", $$v)
+                          },
+                          expression: "form.weeksToMaturity"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.weeksToMaturity }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Servings per m2" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.servingsPerM2,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "servingsPerM2", $$v)
+                          },
+                          expression: "form.servingsPerM2"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.servingsPerM2 }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Max Low Temp" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.maxLowTemp,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "maxLowTemp", $$v)
+                          },
+                          expression: "form.maxLowTemp"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.maxLowTemp }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { value: "First Sowing Week" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.firstSowing,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "firstSowing", $$v)
+                          },
+                          expression: "form.firstSowing"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.firstSowing }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Last Sowing Week" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.lastSowing,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "lastSowing", $$v)
+                          },
+                          expression: "form.lastSowing"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.lastSowing }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { value: "Harvest Window (weeks)" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.harvestWindow,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "harvestWindow", $$v)
+                          },
+                          expression: "form.harvestWindow"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.harvestWindow }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Mulitple Sowings" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.multipleSowings,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "multipleSowings", $$v)
+                          },
+                          expression: "form.multipleSowings"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.multipleSowings }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { value: "First Harvest Week" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.firstHarvest,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "firstHarvest", $$v)
+                          },
+                          expression: "form.firstHarvest"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.firstHarvest }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { value: "Last Harvest Week" }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.lastHarvest,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "lastHarvest", $$v)
+                          },
+                          expression: "form.lastHarvest"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.lastHarvest }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Total Harvests" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.totalHarvests,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "totalHarvests", $$v)
+                          },
+                          expression: "form.totalHarvests"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.totalHarvests }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-6 sm:col-span-4" },
+                    [
+                      _c("jet-label", { attrs: { value: "Total Sowings" } }),
+                      _vm._v(" "),
+                      _c("jet-input", {
+                        staticClass: "mt-1 block w-full",
+                        attrs: { type: "text", autocomplete: "0" },
+                        model: {
+                          value: _vm.form.totalSowings,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "totalSowings", $$v)
+                          },
+                          expression: "form.totalSowings"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.form.errors.totalSowings }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "actions",
+              fn: function() {
+                return [
+                  _c(
+                    "jet-action-message",
+                    {
+                      staticClass: "mr-3",
+                      attrs: { on: _vm.form.recentlySuccessful }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Gespeichert.\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-button",
+                    {
+                      class: { "opacity-25": _vm.form.processing },
+                      attrs: { disabled: _vm.form.processing }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Speichern\n                "
+                      )
+                    ]
+                  )
+                ]
+              },
+              proxy: true
+            }
+          ])
+        })
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue?vue&type=template&id=6a93800d&":
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/CustomComponents/Admin/AdminUpdatePasswordForm.vue?vue&type=template&id=6a93800d& ***!
@@ -30954,7 +31649,11 @@ var render = function() {
             1
           )
         ])
-      })
+      }),
+      _vm._v(" "),
+      _c("div", [
+        _c("div", { staticClass: "m-3" }, [_c("admin-add-variety-form")], 1)
+      ])
     ],
     2
   )

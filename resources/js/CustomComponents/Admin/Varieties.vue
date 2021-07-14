@@ -6,15 +6,22 @@
                 <admin-update-variety-information-form :variety="variety" />
             </div>
         </div>
+        <div>
+            <div class="m-3">
+                <admin-add-variety-form />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import AdminUpdateVarietyInformationForm from '@/CustomComponents/Admin/AdminUpdateVarietyInformationForm'
+    import AdminAddVarietyForm from '@/CustomComponents/Admin/AdminAddVarietyForm'
 
     export default {
         components: {
             AdminUpdateVarietyInformationForm,
+            AdminAddVarietyForm,
         },
     }
 </script>
