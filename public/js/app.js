@@ -2070,13 +2070,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['id'],
+  props: ['id', 'name'],
   components: {
     SecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_0__.default,
     AdminUpdatePasswordForm: _CustomComponents_Admin_AdminUpdatePasswordForm__WEBPACK_IMPORTED_MODULE_1__.default,
@@ -2094,11 +2097,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     deleteVariety: function deleteVariety() {
-      console.log(this.form);
-      this.form.post(route('varieties.destroy', this.id), {
+      confirm('Are you sure you want to delete ' + this.name + '?') ? this.form.post(route('varieties.destroy', this.id), {
         errorBag: 'deleteVariety',
         preserveScroll: true
-      });
+      }) : console.log('deletion canceled');
     }
   }
 });
@@ -30425,7 +30427,8 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "font-semibold text-lg",
+        staticClass:
+          "font-semibold text-lg text-green-600 hover:text-green-800",
         on: {
           click: function($event) {
             _vm.show = !_vm.show
@@ -30852,27 +30855,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("jet-form-section", {
-    on: { submitted: _vm.deleteVariety },
-    scopedSlots: _vm._u([
-      {
-        key: "actions",
-        fn: function() {
-          return [
-            _c(
-              "jet-button",
-              {
-                class: { "opacity-25": _vm.form.processing },
-                attrs: { disabled: _vm.form.processing }
-              },
-              [_vm._v("\n            Delete\n        ")]
-            )
-          ]
-        },
-        proxy: true
+  return _c(
+    "form",
+    {
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.deleteVariety($event)
+        }
       }
-    ])
-  })
+    },
+    [
+      _c(
+        "jet-button",
+        {
+          staticClass: "text-red-600 hover:text-red-800 mx-3",
+          class: { "opacity-25": _vm.form.processing },
+          attrs: { disabled: _vm.form.processing }
+        },
+        [_vm._v("\n        Delete\n    ")]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31733,7 +31738,12 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("admin-delete-variety", { attrs: { id: _vm.variety.id } })
+                  _c("admin-delete-variety", {
+                    attrs: {
+                      id: _vm.variety.id,
+                      name: _vm.variety.variety_name
+                    }
+                  })
                 ]
               },
               proxy: true

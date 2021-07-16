@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="show = !show" class="font-semibold text-lg">Add Variety</button>
+        <button @click="show = !show" class="font-semibold text-lg text-green-600 hover:text-green-800">Add Variety</button>
         <div v-show="show">
 
             <jet-form-section @submitted="addVariety">

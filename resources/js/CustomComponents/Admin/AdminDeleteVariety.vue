@@ -1,13 +1,10 @@
-<!--TODO: finish this-->
 <template>
 
-    <jet-form-section @submitted="deleteVariety">
-        <template #actions>
-            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Delete
-            </jet-button>
-        </template>
-    </jet-form-section>
+    <form @submit.prevent="deleteVariety">
+        <jet-button class="text-red-600 hover:text-red-800 mx-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            Delete
+        </jet-button>
+    </form>
 
 </template>
 
@@ -19,7 +16,7 @@
     import JetFormSection from "@/Jetstream/FormSection";
 
     export default {
-        props: ['id'],
+        props: ['id', 'name'],
 
         components: {
             SecondaryButton,
@@ -40,12 +37,12 @@
 
         methods: {
             deleteVariety() {
-                console.log(this.form)
+                confirm('Are you sure you want to delete ' + this.name + '?') ?
 
                 this.form.post(route('varieties.destroy', this.id), {
                     errorBag: 'deleteVariety',
                     preserveScroll: true,
-                });
+                }) : console.log('deletion canceled')
             },
         },
     }

@@ -102,7 +102,7 @@
                     <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Speichern
                     </jet-button>
-                    <admin-delete-variety :id="variety.id" />
+                    <admin-delete-variety :id="variety.id" :name="variety.variety_name" />
                 </template>
             </jet-form-section>
         </div>
