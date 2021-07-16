@@ -37,8 +37,7 @@
 
         methods: {
             deleteVariety() {
-                confirm('Are you sure you want to delete ' + this.name + '?') ?
-
+                confirm('Are you sure you want to delete the variety ' + this.name + '?') ?
                 this.form.post(route('varieties.destroy', this.id), {
                     errorBag: 'deleteVariety',
                     preserveScroll: true,

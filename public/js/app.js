@@ -2068,11 +2068,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -30873,7 +30868,7 @@ var render = function() {
           class: { "opacity-25": _vm.form.processing },
           attrs: { disabled: _vm.form.processing }
         },
-        [_vm._v("\n        Delete\n    ")]
+        [_vm._v("\n        Delete " + _vm._s(_vm.name) + "\n    ")]
       )
     ],
     1
