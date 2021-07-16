@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: garden_app
--- Generation Time: 2021-07-16 11:20:35.3360
+-- Generation Time: 2021-07-16 12:44:26.9970
 -- -------------------------------------------------------------
 
 
@@ -158,29 +158,6 @@ CREATE TABLE `varieties` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `bed_variety` (`id`, `bed_id`, `variety_id`, `area`, `sowing_week`, `first_harvest_week`) VALUES
-(146, 13, 1, 6667, 9, 21),
-(147, 13, 2, 11429, 9, 18),
-(148, 13, 3, 4000, 11, 19),
-(149, 13, 1, 6667, 13, 25),
-(150, 13, 2, 11429, 13, 22),
-(151, 13, 3, 4000, 13, 21),
-(152, 13, 1, 5808, 17, 29),
-(153, 14, 1, 859, 17, 29),
-(154, 14, 2, 11429, 17, 26),
-(155, 14, 3, 4000, 15, 23),
-(156, 14, 1, 6667, 21, 33),
-(157, 14, 2, 11429, 21, 30),
-(158, 14, 3, 4000, 17, 25),
-(159, 14, 1, 6667, 25, 37),
-(160, 14, 2, 4949, 25, 34),
-(161, 15, 2, 6480, 25, 34),
-(162, 15, 3, 4000, 19, 27),
-(163, 15, 1, 6667, 29, 41),
-(164, 15, 2, 11429, 29, 38),
-(165, 15, 3, 4000, 21, 29),
-(166, 15, 2, 11429, 33, 42),
-(167, 15, 3, 4000, 23, 31),
-(168, 15, 3, 1995, 25, 33),
 (350, 16, 1, 6667, 9, 21),
 (351, 16, 2, 11429, 9, 18),
 (352, 16, 3, 4000, 11, 19),
@@ -199,15 +176,11 @@ INSERT INTO `bed_variety` (`id`, `bed_id`, `variety_id`, `area`, `sowing_week`, 
 (365, 18, 1, 1712, 21, 33);
 
 INSERT INTO `beds` (`id`, `bed_number`, `width`, `length`, `garden_id`, `created_at`, `updated_at`) VALUES
-(13, 1, 100, 500, 27, '2021-01-28 16:39:04', '2021-01-28 16:39:04'),
-(14, 2, 100, 500, 27, '2021-01-28 16:39:27', '2021-01-28 16:39:27'),
-(15, 3, 100, 500, 27, '2021-01-28 16:39:33', '2021-01-28 16:39:33'),
 (16, 1, 100, 300, 28, '2021-02-02 15:29:33', '2021-02-02 15:29:33'),
 (17, 2, 100, 300, 28, '2021-02-02 15:29:40', '2021-02-02 15:29:40'),
 (18, 3, 100, 300, 28, '2021-02-02 15:29:45', '2021-02-02 15:29:45');
 
 INSERT INTO `gardens` (`id`, `user_id`, `created_at`, `updated_at`, `name`, `servings_per_harvest`) VALUES
-(27, 3, '2021-01-28 16:38:41', '2021-02-08 10:32:10', 'Garten 1', 2),
 (28, 1, '2021-01-29 09:13:58', '2021-02-09 08:59:57', 'Garten 1', 2);
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -231,9 +204,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (97, '2021_07_14_080222_add_softdeletes_to_varieties_table', 9);
 
 INSERT INTO `preferred_varieties` (`id`, `garden_id`, `variety_id`) VALUES
-(21, 27, 1),
-(22, 27, 2),
-(23, 27, 3),
 (43, 28, 5),
 (44, 28, 1),
 (45, 28, 2),
@@ -241,7 +211,7 @@ INSERT INTO `preferred_varieties` (`id`, `garden_id`, `variety_id`) VALUES
 (47, 28, 4);
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('d7AYhO25O3A7AK2JIpD08xv7ydIP21Kylzdz7oBf', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiWVUwajVvekNLazh3TmFzVWh3bDRhYk5VVk5mTFl0WXM3d3R4ZDFaRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626426836),
+('d7AYhO25O3A7AK2JIpD08xv7ydIP21Kylzdz7oBf', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiWVUwajVvekNLazh3TmFzVWh3bDRhYk5VVk5mTFl0WXM3d3R4ZDFaRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626430398),
 ('DsxfsrPGkLRKf118qFKn07hUMKNnBLAnnM0KbVfF', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSWhOMnFNNVhxT2FTR0s5WGQ4U2dIcEFqT3B1OXROcW5ldnJ0VzVxYyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJG9wdnpMWjFOeXA4eHNuWFE1SVJlYWUvbG9XR2NSWFdZVW91YlFneXhDYzNHNkMzTDFwUllHIjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fX0=', 1626251074),
 ('Ipu4kEzW8F7yJGrqhyHFuFORB7cMrzzhw76boClq', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoibGJCV1A1c1lHRmVOcDRWbVJzMjM5NkV1ZTVKa0x5ZEhmZGtMZm9uMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7fQ==', 1626251595),
 ('lLR5Xv6t2BYiy1prxh11o5t5natlkwMBSpLRrcrG', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiUjNCM2hRbFhTNUREQ21sekhQTUFKblZaNkdnZXp0VVhURFVxaGJXWSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626255593),
@@ -249,9 +219,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('ZjHeMLMdbXJsJn6xy2O9u8WhlPBLwX3GvIA3h6GB', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiMWt0QVFibVY1cWZkRWpUejFYbjBoa1FUUjNxRWUxMEFFZ1VVWGVXcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7fQ==', 1626252446);
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`, `admin`) VALUES
-(1, 'Cody Jolly', 'jolly.cody@gmail.com', '2021-01-14 14:47:43', '$2y$10$opvzLZ1Nyp8xsnXQ5IReae/loWGcRXWYUoubQgyxCc3G6C3L1pRYG', NULL, NULL, 'AgkXv7oeBjH9qWA7IUaqYh3S0jYa2A3X0V0WKxgCOxgRWLk19t1oKDZVoqIk', NULL, 'profile-photos/fyYQNNnUSy7jjXbRxeHdoCRpdjnpjlNKzBFIwl8y.jpg', '2021-01-14 14:47:31', '2021-07-14 06:52:07', 1),
-(2, 'Kristin Jolly', 'kj@kj.de', '2021-01-21 18:01:40', '$2y$10$YqNJSzoLPveO55CIET5VkeNXPW0npDkVkN4dhwzgbHUBLDSWkdGwy', NULL, NULL, NULL, NULL, NULL, '2021-01-21 18:01:33', '2021-01-21 18:02:46', 0),
-(3, 'Janine Ol', 'jo@jo.de', '2021-01-28 16:37:13', '$2y$10$0S4QkdxwAvDFSwHQIZyqcuPLRBmF5GbeOtuiUIERBYnQYupLV1EIa', NULL, NULL, NULL, NULL, 'profile-photos/VJsVer94Wj9gyRkx1HTpC6CIdNJzU0mM0AeekTjE.jpg', '2021-01-28 16:36:53', '2021-01-28 16:38:02', 0);
+(1, 'Cody Jolly', 'cj@cj.com', '2021-01-14 14:47:43', '$2y$10$opvzLZ1Nyp8xsnXQ5IReae/loWGcRXWYUoubQgyxCc3G6C3L1pRYG', NULL, NULL, 'AgkXv7oeBjH9qWA7IUaqYh3S0jYa2A3X0V0WKxgCOxgRWLk19t1oKDZVoqIk', NULL, 'profile-photos/fyYQNNnUSy7jjXbRxeHdoCRpdjnpjlNKzBFIwl8y.jpg', '2021-01-14 14:47:31', '2021-07-14 06:52:07', 1);
 
 INSERT INTO `varieties` (`id`, `variety_name`, `weeks_to_maturity`, `servings_per_m2`, `max_low_temp`, `first_sowing`, `last_sowing`, `harvest_window`, `multiple_sowings`, `first_harvest`, `last_harvest`, `total_harvests`, `total_sowings`, `deleted_at`) VALUES
 (1, 'Möhren', 12, 12, 0, 9, 29, 4, 1, 21, 45, 24, 6, NULL),
