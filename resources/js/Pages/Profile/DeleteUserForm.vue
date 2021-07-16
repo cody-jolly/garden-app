@@ -43,7 +43,7 @@
                     </jet-secondary-button>
 
                     <jet-danger-button class="ml-2" @click.native="deleteUser" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        Konto löshcen
+                        Konto löschen
                     </jet-danger-button>
                 </template>
             </jet-dialog-modal>

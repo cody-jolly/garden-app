@@ -2092,7 +2092,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     deleteVariety: function deleteVariety() {
-      confirm('Are you sure you want to delete ' + this.name + '?') ? this.form.post(route('varieties.destroy', this.id), {
+      confirm('Are you sure you want to delete the variety ' + this.name + '?') ? this.form.post(route('varieties.destroy', this.id), {
         errorBag: 'deleteVariety',
         preserveScroll: true
       }) : console.log('deletion canceled');
@@ -30868,7 +30868,7 @@ var render = function() {
           class: { "opacity-25": _vm.form.processing },
           attrs: { disabled: _vm.form.processing }
         },
-        [_vm._v("\n        Delete " + _vm._s(_vm.name) + "\n    ")]
+        [_vm._v("\n        Delete\n    ")]
       )
     ],
     1
