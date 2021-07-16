@@ -36926,7 +36926,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Konto löshcen\n                "
+                            "\n                    Konto löschen\n                "
                           )
                         ]
                       )

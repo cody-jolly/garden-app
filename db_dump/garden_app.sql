@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: garden_app
--- Generation Time: 2021-07-16 12:44:26.9970
+-- Generation Time: 2021-07-16 12:57:13.7800
 -- -------------------------------------------------------------
 
 
@@ -30,7 +30,7 @@ CREATE TABLE `bed_variety` (
   KEY `bed_variety_variety_id_foreign` (`variety_id`),
   CONSTRAINT `bed_variety_bed_id_foreign` FOREIGN KEY (`bed_id`) REFERENCES `beds` (`id`) ON DELETE CASCADE,
   CONSTRAINT `bed_variety_variety_id_foreign` FOREIGN KEY (`variety_id`) REFERENCES `varieties` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=366 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=463 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `beds` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -43,7 +43,7 @@ CREATE TABLE `beds` (
   PRIMARY KEY (`id`),
   KEY `beds_garden_id_foreign` (`garden_id`),
   CONSTRAINT `beds_garden_id_foreign` FOREIGN KEY (`garden_id`) REFERENCES `gardens` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -67,7 +67,7 @@ CREATE TABLE `gardens` (
   PRIMARY KEY (`id`),
   KEY `gardens_user_id_foreign` (`user_id`),
   CONSTRAINT `gardens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -107,7 +107,7 @@ CREATE TABLE `preferred_varieties` (
   KEY `preferred_varieties_variety_id_foreign` (`variety_id`),
   CONSTRAINT `preferred_varieties_garden_id_foreign` FOREIGN KEY (`garden_id`) REFERENCES `gardens` (`id`) ON DELETE CASCADE,
   CONSTRAINT `preferred_varieties_variety_id_foreign` FOREIGN KEY (`variety_id`) REFERENCES `varieties` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `sessions` (
   `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -137,7 +137,7 @@ CREATE TABLE `users` (
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `varieties` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -211,11 +211,12 @@ INSERT INTO `preferred_varieties` (`id`, `garden_id`, `variety_id`) VALUES
 (47, 28, 4);
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('d7AYhO25O3A7AK2JIpD08xv7ydIP21Kylzdz7oBf', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiWVUwajVvekNLazh3TmFzVWh3bDRhYk5VVk5mTFl0WXM3d3R4ZDFaRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626430398),
+('d7AYhO25O3A7AK2JIpD08xv7ydIP21Kylzdz7oBf', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiWVUwajVvekNLazh3TmFzVWh3bDRhYk5VVk5mTFl0WXM3d3R4ZDFaRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626432500),
 ('DsxfsrPGkLRKf118qFKn07hUMKNnBLAnnM0KbVfF', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSWhOMnFNNVhxT2FTR0s5WGQ4U2dIcEFqT3B1OXROcW5ldnJ0VzVxYyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJG9wdnpMWjFOeXA4eHNuWFE1SVJlYWUvbG9XR2NSWFdZVW91YlFneXhDYzNHNkMzTDFwUllHIjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fX0=', 1626251074),
 ('Ipu4kEzW8F7yJGrqhyHFuFORB7cMrzzhw76boClq', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoibGJCV1A1c1lHRmVOcDRWbVJzMjM5NkV1ZTVKa0x5ZEhmZGtMZm9uMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7fQ==', 1626251595),
 ('lLR5Xv6t2BYiy1prxh11o5t5natlkwMBSpLRrcrG', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiUjNCM2hRbFhTNUREQ21sekhQTUFKblZaNkdnZXp0VVhURFVxaGJXWSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626255593),
 ('QApNnUGcd4YGYmADZaHkQOaeRwZ6jpaIH0cd4msd', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiQmpDSlBkZUhVOHRFOXIxZTRiN0lFcTN4Sjh6Yk5WMEdkNG9VVE9ybyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJHE0MlpBb1ZYWE9nUnFGMjR5R3JMMi5BU0RWSWhWd1JTYjMyQUVKQy45STloZDNvTE9KNlR5IjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRxNDJaQW9WWFhPZ1JxRjI0eUdyTDIuQVNEVkloVndSU2IzMkFFSkMuOUk5aGQzb0xPSjZUeSI7fQ==', 1612866596),
+('VphJHfs89SI9ZBmu4eA1dkbnPi9gJOLsBLOOEvTH', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiOUw4VkRBVnpuSVByOHQ4UnRReDdqYktQMFREV2RsMUVWd0x5RnI3QiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkb3B2ekxaMU55cDh4c25YUTVJUmVhZS9sb1dHY1JYV1lVb3ViUWd5eENjM0c2QzNMMXBSWUciO30=', 1626432982),
 ('ZjHeMLMdbXJsJn6xy2O9u8WhlPBLwX3GvIA3h6GB', 1, '10.0.2.2', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiMWt0QVFibVY1cWZkRWpUejFYbjBoa1FUUjNxRWUxMEFFZ1VVWGVXcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9nYXJkZW4tYXBwLnRlc3Q6MTA1MCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRvcHZ6TFoxTnlwOHhzblhRNUlSZWFlL2xvV0djUlhXWVVvdWJRZ3l4Q2MzRzZDM0wxcFJZRyI7fQ==', 1626252446);
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`, `admin`) VALUES
@@ -226,7 +227,7 @@ INSERT INTO `varieties` (`id`, `variety_name`, `weeks_to_maturity`, `servings_pe
 (2, 'Rote Beete', 9, 7, 0, 9, 32, 4, 1, 18, 45, 27, 7, NULL),
 (3, 'Salat', 8, 10, 0, 11, 32, 2, 1, 19, 42, 23, 12, NULL),
 (4, 'Zuchini', 10, 10, 5, 21, 0, 8, 0, 31, 39, 8, 1, NULL),
-(5, 'Radieschen', 6, 20, 0, 12, 42, 2, 1, 18, 48, 30, 30, NULL);
+(5, 'Radieschen', 6, 20, 0, 12, 42, 2, 1, 18, 48, 30, 15, NULL);
 
 
 
